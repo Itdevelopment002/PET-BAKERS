@@ -1,0 +1,120 @@
+.footer {
+    background-color: #0f7b7b;
+    color: #ffffff;
+    padding: 20px 0;
+    font-family: "Cooper BT", serif;
+  }
+  
+  .footer h5 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #ffffff;
+  }
+  
+  .footer .footer-link {
+    color: #e2f5f3;
+    font-weight: 600;
+    display: block; 
+    margin: 7px;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer .footer-link:hover {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+  
+  .footer .social-icons {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer .social-icon {
+    color: #ffffff;
+    font-size: 24px;
+    transition: transform 0.3s, color 0.3s;
+  }
+  
+  .footer .social-icon:hover {
+    color: #80cbc4;
+    transform: scale(1.2);
+  }
+  
+  .footer .whatsapp-info {
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+  }
+  
+  .footer .company-info {
+    margin: 14px;
+    font-size: 16px;
+    color: #e0f2f1;
+    font-weight:600;
+  }
+  
+  .footer .footer-note {
+    margin: 0;
+    font-size: 14px;
+    color: #b2dfdb;
+  }
+  
+  .footer .icon {
+    font-size: 20px;
+    color: #ffffff;
+  }
+
+ 
+  
+  .footer-note {
+    font-size: 14px;
+    color: #b2dfdb;
+    text-align: left;
+    margin: 0;
+  }
+  
+  
+  @media (max-width: 767px) {
+    .footer h5 {
+      text-align: center;
+    }
+    .footer .row > div {
+      text-align: center;
+    }
+    .footer .social-icons {
+      justify-content: center;
+    }
+  }
+  
+  
+
+
+  .payment-icons {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .payment-icon-container {
+    display: inline-block;
+    padding: 12px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+
+  .payment-icon {
+    width: 30px; 
+    height: 30px; 
+    object-fit: contain; 
+    color: inherit;
+  }
+
+  .payment-icon-container:hover {
+    transform: scale(1.1);
+    background-color: rgba(0, 0, 0, 0.2);
+  }
