@@ -46,14 +46,12 @@ const Header = () => {
                     <FaHamburger />
                 </button>
 
-                {/* Brand Logo */}
                 <h1 className="header__heading mx-3">
                     <a href="/" className="header__heading-link link">
                         Pet Baker
                     </a>
                 </h1>
 
-                {/* Navbar links */}
                 <nav className={`navbar-collapse navbar-nav ${menuOpen ? 'open' : ''}`} id="navbarNav">
                     <ul className="navbar-nav navbar-items d-flex mx-2 justify-content-center">
                         <li className="nav-item">
