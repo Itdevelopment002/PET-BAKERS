@@ -1,0 +1,146 @@
+:root {
+    --font-heading-family: "Cooper BT", serif;
+}
+
+.font-fam{
+    font-family: var(--font-heading-family);
+}
+
+/* General FAQ Container with Custom Margins */
+.faq-container {
+    margin-left: 25rem; /* 5rem margin on the left */
+    margin-right: 25rem; /* 5rem margin on the right */
+  }
+  
+  /* Responsive Margins for Smaller Screens */
+  @media (max-width: 992px) {
+    .faq-container {
+      margin-left: 2rem; /* Reduced margin on medium screens */
+      margin-right: 2rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .faq-container {
+      margin-left: 1rem; /* Further reduced margin on smaller screens */
+      margin-right: 1rem;
+    }
+  }
+  
+  /* FAQ Header Text */
+  .text-center h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Accordion Styling */
+  .accordion-item {
+    margin-bottom: 1rem; /* Add spacing between accordion items */
+  }
+  
+  .accordion-button {
+    font-weight: bold; /* Bold font for questions */
+  }
+  
+  .accordion-body {
+    background-color: #f8f9fa; /* Light background for answers */
+    color: #333;
+    padding: 1rem;
+    border: 1px solid #ddd;
+  }
+  
+  .bg-teal {
+    background-color: #008080; /* Custom teal color */
+  }
+  
+  /* Reduce the size of the down arrow icon */
+.accordion-button::after {
+    font-size: 0.8rem; /* Reduce the arrow size */
+    transform: scale(0.8); /* Optionally scale it down for more control */
+    margin-left: 0.5rem; /* Add slight spacing to the left of the text */
+  }
+  
+  /* Additional fixes for hover effects */
+  .accordion-button:hover::after {
+    text-decoration: none; /* Remove underline on the arrow */
+  }
+
+  /* General FAQ Container with Custom Margins */
+.faq-container {
+    margin-left: 25rem;
+    margin-right: 25rem;
+  }
+  
+  /* Responsive Margins for Smaller Screens */
+  @media (max-width: 992px) {
+    .faq-container {
+      margin-left: 2rem;
+      margin-right: 2rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .faq-container {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+  }
+  
+  /* FAQ Accordion Styling */
+  .accordion-item {
+    margin-bottom: 1rem; /* Space between items */
+    border-radius: 5px; /* Rounded corners */
+    border: 1px solid #ddd; /* Light border */
+    overflow: hidden; /* Ensures border radius applies to children */
+  }
+  
+  .accordion-button {
+    font-weight: bold;
+    background-color: #ffffff; /* Default white background */
+    border: none; /* Remove border */
+    box-shadow: none; /* Remove box shadow */
+    outline: none; /* Remove outline */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+  }
+  
+  .accordion-button:hover {
+    background-color: #f0f8f8; /* Light background on hover */
+    text-decoration: underline; /* Underline on hover */
+  }
+  
+  .accordion-button:focus {
+    box-shadow: none; /* Remove box shadow when focused */
+    outline: none; /* Remove outline when clicked */
+  }
+  
+  .accordion-button:not(.collapsed) {
+    background-color: #f0f8f8; /* Keep the same background color when expanded */
+    color: #000; /* Maintain text color */
+  }
+  
+  .accordion-body {
+    background-color: #f8f9fa; /* Light background for answers */
+    color: #333;
+    padding: 1rem;
+    font-size: 20px;
+    border: 1px solid #ddd;
+    white-space: pre-line; /* Allows line breaks in text */
+  }
+  
+  .accordion-button::after {
+    font-size: 0.8rem; /* Reduce the arrow size */
+    transform: scale(0.8); /* Optionally scale it down for more control */
+    margin-left: auto; /* Move the icon to the right */
+  }
+  
+  /* Ensure the button text stays aligned left */
+  .accordion-button {
+    display: flex; /* Use flex to align text and icon properly */
+    justify-content: space-between; /* Space out the content, pushing the icon to the right */
+    align-items: center; /* Align items vertically in the center */
+  }
+  
+  /* Additional fixes for hover effects */
+  .accordion-button:hover::after {
+    text-decoration: none; /* Remove underline on the arrow */
+  }
