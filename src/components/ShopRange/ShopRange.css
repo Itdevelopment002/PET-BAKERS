@@ -1,0 +1,137 @@
+:root {
+    --font-heading-family: "Cooper BT", serif;
+    --font-color: #1a6d6d;
+  }
+  
+  .parent-class .Range-heading {
+    font-family: var(--font-heading-family);
+    font-weight: 500;
+    color: var(--font-color);
+    margin-top: 100px;
+  }
+  
+  /* Custom Container to Match Bootstrap's Container Width */
+  .custom-container {
+    width: 100%;
+    max-width: 1600px; /* Bootstrap's max width for large screens */
+    padding: 0 15px; /* Bootstrap container padding */
+    margin: 0 auto; /* Center the container */
+  }
+  .card-body-bottom h6{
+    font-weight: 500;
+    font-family: var(--font-heading-family);
+    --font-color: #185353;
+
+
+  }
+  
+  /* For medium devices (tablets) */
+  @media (max-width: 991px) {
+    .custom-container {
+      max-width: 960px; /* Bootstrap's max width for medium screens */
+    }
+  }
+  
+  /* For small devices (phones) */
+  @media (max-width: 767px) {
+    .custom-container {
+      max-width: 720px; /* Bootstrap's max width for small screens */
+    }
+  }
+  
+  /* For extra small devices */
+  @media (max-width: 575px) {
+    .custom-container {
+      max-width: 100%; /* Full width for extra small screens */
+      padding: 0 15px;
+    }
+  }
+  
+  /* Base styles */
+  .card-img-top {
+    width: 100%;
+    height: auto;
+  }
+  
+  .card-body-bottom {
+    padding: 10px;
+  }
+  
+  .card-body-bottom h6 {
+    font-size: 1.1rem;
+  }
+  
+  .custum-card {
+    transition: transform 0.3s ease;
+  }
+  
+  .custum-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .text-center h6 {
+    color: var(--font-color);
+  }
+  
+  /* Responsive Design */
+  
+  /* For small devices like phones (max-width: 575px) */
+  @media (max-width: 575px) {
+    .Range-heading {
+      font-size: 1.5rem;
+    }
+  
+    .card-body-bottom h6 {
+      font-size: 1rem;
+    }
+  
+    .custom-section .col-12 {
+      margin-bottom: 1rem;
+    }
+  }
+  
+  /* For medium devices (tablets, small screens) (min-width: 576px and max-width: 767px) */
+  @media (min-width: 576px) and (max-width: 767px) {
+    .Range-heading {
+      font-size: 1.75rem;
+    }
+  
+    .card-body-bottom h6 {
+      font-size: 1.1rem;
+    }
+  
+    .custom-section .col-12 {
+      margin-bottom: 1.5rem;
+    }
+  }
+  
+  /* For large devices (desktops, large tablets) (min-width: 768px and max-width: 991px) */
+  @media (min-width: 768px) and (max-width: 991px) {
+    .Range-heading {
+      font-size: 2rem;
+    }
+  
+    .card-body-bottom h6 {
+      font-size: 1.2rem;
+    }
+  
+    .custom-section .col-md-4 {
+      margin-bottom: 2rem;
+    }
+  }
+  
+  /* For extra large devices (larger screens, high-resolution devices) (min-width: 992px) */
+  @media (min-width: 992px) {
+    .Range-heading {
+      font-size: 2.5rem;
+    }
+  
+    .card-body-bottom h6 {
+      font-size: 1.3rem;
+    }
+  
+    .custom-section .col-lg-2 {
+      margin-bottom: 2rem;
+    }
+  }
+  
