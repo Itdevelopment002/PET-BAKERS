@@ -32,144 +32,217 @@ const Header = () => {
     }, []);
 
     return (
-        <header className="header-wrapper">
-            <div className="container d-flex justify-content-between align-items-center">
-                {/* Navbar toggle button for mobile */}
-                <button
-                    className="navbar-toggler"
-                    type="button"
-                    aria-controls="navbarNav"
-                    aria-expanded={menuOpen ? 'true' : 'false'}
-                    aria-label="Toggle navigation"
-                    onClick={toggleMenu}
-                >
-                    <FaHamburger />
-                </button>
+        <>
+<div className="custom-utility-bar custom-gradient">
+  <div className="container">
+    {/* Carousel Section */}
+    <div id="announcementCarousel" className="carousel slide custom-carousel" data-bs-ride="carousel">
+      <div className="carousel-inner custom-carousel-inner">
+        {/* Slide 1 */}
+        <div className="carousel-item active custom-carousel-item">
+          <div className="custom-announcement-message text-center py-2">
+            <a
+              href="https://thefurrybaker.com/collections/paw-snacks"
+              className="custom-announcement-link text-decoration-none text-dark d-inline-flex align-items-center"
+            >
+              <span className="me-2 custom-announcement-message">
+                Buy 3 Gluten-free Cookies & Pay for only 2 - Order Now
+              </span>
+              <svg
+                viewBox="0 0 14 10"
+                fill="none"
+                aria-hidden="true"
+                className="custom-icon-arrow"
+                xmlns="http://www.w3.org/2000/svg"
+                style={{ width: "16px", height: "10px" }}
+              >
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M8.537.808a.5.5 0 01.817-.162l4 4a.5.5 0 010 .708l-4 4a.5.5 0 11-.708-.708L11.793 5.5H1a.5.5 0 010-1h10.793L8.646 1.354a.5.5 0 01-.109-.546z"
+                  fill="currentColor"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
 
-                <h1 className="header__heading mx-3">
-                    <a href="/" className="header__heading-link link">
-                        Pet Baker
-                    </a>
-                </h1>
+        {/* Slide 2 */}
+        <div className="carousel-item custom-carousel-item">
+          <div className="custom-announcement-message text-center py-2">
+            <p className="custom-announcement-message mb-0">
+              Provide free delivery for orders above ₹1799 - Use Coupon{" "}
+              <span className="text-primary">FURRYSHIP</span>
+            </p>
+          </div>
+        </div>
+      </div>
 
-                <nav className={`navbar-collapse navbar-nav ${menuOpen ? 'open' : ''}`} id="navbarNav">
-                    <ul className="navbar-nav navbar-items d-flex mx-2 justify-content-center">
-                        <li className="nav-item">
-                            <a
-                                href="/"
-                                className={`nav-link ${activeLink === 'home' ? 'active' : ''}`}
-                                onClick={() => handleNavLinkClick('home')}
-                                aria-current="page"
-                            >
-                                Home
-                            </a>
-                        </li>
-                        <li className="nav-item">
-                            <a
-                                href="/pages/about-us"
-                                className={`nav-link ${activeLink === 'about-us' ? 'active' : ''}`}
-                                onClick={() => handleNavLinkClick('about-us')}
-                            >
-                                About Us
-                            </a>
-                        </li>
-                        <li className="nav-item dropdown">
-                            <a
-                                className={`nav-link ${activeLink === 'shop' ? 'active' : ''}`}
-                                href="#."
-                                id="navbarDropdown"
-                                role="button"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                                onClick={() => handleNavLinkClick('shop')}
-                            >
-                                Shop <FaCaretDown />
-                            </a>
-                            <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a className="dropdown-item" href="/collections/cup-cakes">Cup Cakes</a></li>
-                                <li><a className="dropdown-item" href="/collections/mini-cakes">Mini Cakes</a></li>
-                                <li><a className="dropdown-item" href="/collections/cakes">Cakes</a></li>
-                                <li><a className="dropdown-item" href="/collections/paw-snacks">Paw Snacks</a></li>
-                            </ul>
-                        </li>
-                        <li className="nav-item">
-                            <a
-                                href="/pages/contact"
-                                className={`nav-link ${activeLink === 'contact' ? 'active' : ''}`}
-                                onClick={() => handleNavLinkClick('contact')}
-                            >
-                                Contact
-                            </a>
-                        </li>
-                        <li className="nav-item">
-                            <a
-                                href="/pages/faqs"
-                                className={`nav-link ${activeLink === 'faqs' ? 'active' : ''}`}
-                                onClick={() => handleNavLinkClick('faqs')}
-                            >
-                                FAQ's
-                            </a>
-                        </li>
-                        <li className="nav-item">
-                            <a
-                                href="/policies/privacy-policy"
-                                className={`nav-link ${activeLink === 'privacy-policy' ? 'active' : ''}`}
-                                onClick={() => handleNavLinkClick('privacy-policy')}
-                            >
-                                Privacy Policies
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+      {/* Previous Button */}
+      <button
+        className="custom-carousel-prev"
+        type="button"
+        data-bs-target="#announcementCarousel"
+        data-bs-slide="prev"
+      >
+        <span className="custom-carousel-prev-icon" aria-hidden="true"></span>
+        <span className="visually-hidden">Previous</span>
+      </button>
 
-                {/* Icons */}
-                <div className="header__icons d-flex">
-                    <div className="header__search">
-                        <button
+      {/* Next Button */}
+      <button
+        className="custom-carousel-next"
+        type="button"
+        data-bs-target="#announcementCarousel"
+        data-bs-slide="next"
+      >
+        <span className="custom-carousel-next-icon" aria-hidden="true"></span>
+        <span className="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+            <header className="header-wrapper">
+                <div className="container d-flex justify-content-between align-items-center">
+                    {/* Navbar toggle button for mobile */}
+                    <button
+                        className="navbar-toggler"
+                        type="button"
+                        aria-controls="navbarNav"
+                        aria-expanded={menuOpen ? 'true' : 'false'}
+                        aria-label="Toggle navigation"
+                        onClick={toggleMenu}
+                    >
+                        <FaHamburger />
+                    </button>
+
+                    <h1 className="header__heading mx-3">
+                        <a href="/" className="header__heading-link link">
+                            Pet Baker
+                        </a>
+                    </h1>
+
+                    <nav className={`navbar-collapse navbar-nav ${menuOpen ? 'open' : ''}`} id="navbarNav">
+                        <ul className="navbar-nav navbar-items d-flex mx-2 justify-content-center">
+                            <li className="nav-item">
+                                <a
+                                    href="/"
+                                    className={`nav-link ${activeLink === 'home' ? 'active' : ''}`}
+                                    onClick={() => handleNavLinkClick('home')}
+                                    aria-current="page"
+                                >
+                                    Home
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a
+                                    href="/pages/about-us"
+                                    className={`nav-link ${activeLink === 'about-us' ? 'active' : ''}`}
+                                    onClick={() => handleNavLinkClick('about-us')}
+                                >
+                                    About Us
+                                </a>
+                            </li>
+                            <li className="nav-item dropdown">
+                                <a
+                                    className={`nav-link ${activeLink === 'shop' ? 'active' : ''}`}
+                                    href="#."
+                                    id="navbarDropdown"
+                                    role="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                    onClick={() => handleNavLinkClick('shop')}
+                                >
+                                    Shop <FaCaretDown />
+                                </a>
+                                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a className="dropdown-item" href="/collections/cup-cakes">Cup Cakes</a></li>
+                                    <li><a className="dropdown-item" href="/collections/mini-cakes">Mini Cakes</a></li>
+                                    <li><a className="dropdown-item" href="/collections/cakes">Cakes</a></li>
+                                    <li><a className="dropdown-item" href="/collections/paw-snacks">Paw Snacks</a></li>
+                                </ul>
+                            </li>
+                            <li className="nav-item">
+                                <a
+                                    href="/pages/contact"
+                                    className={`nav-link ${activeLink === 'contact' ? 'active' : ''}`}
+                                    onClick={() => handleNavLinkClick('contact')}
+                                >
+                                    Contact
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a
+                                    href="/pages/faqs"
+                                    className={`nav-link ${activeLink === 'faqs' ? 'active' : ''}`}
+                                    onClick={() => handleNavLinkClick('faqs')}
+                                >
+                                    FAQ's
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a
+                                    href="/policies/privacy-policy"
+                                    className={`nav-link ${activeLink === 'privacy-policy' ? 'active' : ''}`}
+                                    onClick={() => handleNavLinkClick('privacy-policy')}
+                                >
+                                    Privacy Policies
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    {/* Icons */}
+                    <div className="header__icons d-flex">
+                        <div className="header__search">
+                            <button
+                                className="header__icon"
+                                data-bs-toggle="modal"
+                                data-bs-target="#searchModal"
+                                style={{ background: "none", border: "none", padding: 0 }}
+                            >
+                                <FaSearch />
+                            </button>
+                        </div>
+                        <a
+                            href="https://shopify.com/87244898615/account?locale=en&region_country=IN"
                             className="header__icon"
-                            data-bs-toggle="modal"
-                            data-bs-target="#searchModal"
-                            style={{ background: "none", border: "none", padding: 0 }}
+                            style={{ background: "none", textDecoration: "none" }}
                         >
-                            <FaSearch />
-                        </button>
+                            <FaUser />
+                        </a>
+                        <a
+                            href="/cart"
+                            className="header__icon"
+                            id="cart-icon-bubble"
+                            style={{ background: "none", textDecoration: "none" }}
+                        >
+                            <FaShoppingCart />
+                        </a>
                     </div>
-                    <a
-                        href="https://shopify.com/87244898615/account?locale=en&region_country=IN"
-                        className="header__icon"
-                        style={{ background: "none", textDecoration: "none" }}
-                    >
-                        <FaUser />
-                    </a>
-                    <a
-                        href="/cart"
-                        className="header__icon"
-                        id="cart-icon-bubble"
-                        style={{ background: "none", textDecoration: "none" }}
-                    >
-                        <FaShoppingCart />
-                    </a>
                 </div>
-            </div>
 
-            {/* Modal for Search */}
-            <div className="modal fade" id="searchModal" tabIndex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
-                <div className="modal-dialog">
-                    <div className="modal-content">
-                        <div className="modal-header">
-                            <h5 className="modal-title" id="searchModalLabel">Search</h5>
-                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div className="modal-body">
-                            <form action="/search" method="get" role="search">
-                                <input className="form-control" type="search" name="q" placeholder="Search" />
-                                <button type="submit" className="btn btn-primary mt-3">Search</button>
-                            </form>
+                {/* Modal for Search */}
+                <div className="modal fade" id="searchModal" tabIndex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+                    <div className="modal-dialog">
+                        <div className="modal-content">
+                            <div className="modal-header">
+                                <h5 className="modal-title" id="searchModalLabel">Search</h5>
+                                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div className="modal-body">
+                                <form action="/search" method="get" role="search">
+                                    <input className="form-control" type="search" name="q" placeholder="Search" />
+                                    <button type="submit" className="btn btn-primary mt-3">Search</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </header>
+            </header>
+        </>
     );
 };
 

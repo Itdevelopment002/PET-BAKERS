@@ -1,0 +1,125 @@
+:root {
+  font-family: 'Philosopher', sans-serif;
+}
+.slider-menu {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Overlay */
+.carousel-item .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 1;
+}
+
+.carousel-inner img {
+  height: 100vh;
+  object-fit: cover;
+  position: relative;
+  z-index: 0;
+}
+
+.carousel-caption {
+  position: absolute;
+  z-index: 2;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  width: 100%;
+  text-align: center;
+  padding: 50px;
+  box-sizing: border-box;
+}
+
+/* Heading Styling */
+.carousel-caption h2 {
+  font-size: 3.3rem;
+  font-weight: bold;
+  color: #f8f9fa; 
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  /* text-transform: uppercase; */
+  font-family: var(--font-heading-family);
+}
+
+/* Paragraph Styling */
+.carousel-caption p {
+  font-size: 1.45rem;
+  color: #e0e0e0;
+  line-height: 1.6;
+  margin-top: 10px;
+  font-family: "Arial", sans-serif;
+}
+
+/* Button Styling */
+.btn-light {
+  padding: 7px 20px;
+  background-color: #ffffff;
+  border: none;
+  color: #055656;
+  font-size: 1.15rem;
+  font-weight: 500;
+  border-radius: 5px;
+  font-family: var(--font-heading-family);
+
+}
+
+.btn-light:hover {
+  background-color: #f0f0f0;
+  color: #000;
+}
+.carousel-control-prev-icon{
+  display: none;
+}
+.carousel-control-next-icon{
+  display: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .carousel-caption h2 {
+      font-size: 2.5rem;
+  }
+  .carousel-caption p {
+      font-size: 1.25rem;
+  }
+  .carousel-caption {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-caption h2 {
+      font-size: 2rem;
+  }
+
+  .carousel-caption p {
+      font-size: 1rem;
+  }
+  .carousel-caption {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-caption h2 {
+      font-size: 1.75rem;
+  }
+
+  .carousel-caption p {
+      font-size: 0.9rem;
+  }
+  .carousel-caption {
+    padding: 20px;
+  }
+}
+
+
+

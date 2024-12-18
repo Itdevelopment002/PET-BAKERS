@@ -10,7 +10,7 @@ const Footer = () => {
     return (
         <footer className="footer">
             <div className="container">
-                <div className="row">
+                <div className="row mt-2">
                     <div className="col-md-3 col-sm-6 mb-4">
                         <h5>Quick Links</h5>
                         <ul className="list-unstyled">
