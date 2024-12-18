@@ -1,0 +1,13 @@
+:root {
+    --font-heading-family: "Cooper BT", serif;
+}
+
+.hello{
+    font-family: var(--font-heading-family);
+}
+
+.form-control:focus {
+    border-color: black; /* Change border color to black */
+    outline: none; /* Remove default outline */
+    box-shadow: none; /* Remove the shadow */
+  }
