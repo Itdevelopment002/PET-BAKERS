@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./Login.css"; // Updated CSS file path
 import logoImage from "../../assets/images/sleep-dog.png"; // Logo image
 import dogGif from "../../assets/gif/dog.gif";
+import fallingImage1 from "../../assets/images/cakepan.png"; // Falling image 1
+import fallingImage2 from "../../assets/images/cookie.png"; // Falling image 2
 
 const Login = () => {
   const [imageSrc, setImageSrc] = useState(dogGif);
@@ -34,6 +36,10 @@ const Login = () => {
 
   return (
     <div className="vh-100 d-flex justify-content-center align-items-center">
+      {/* Falling images */}
+      <img src={fallingImage1} alt="Falling 1" className="falling-image top-left" />
+      <img src={fallingImage2} alt="Falling 2" className="falling-image top-right" />
+
       {/* Right Section */}
       <div className="right-section">
         <div className="login-form">

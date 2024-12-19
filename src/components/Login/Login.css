@@ -1,3 +1,42 @@
+/* Falling images */
+.falling-image {
+  position: absolute;
+  width: 200px;
+  height: auto;
+  animation: fall 10s infinite ease-in-out;
+  opacity: 0;
+  top: 0;
+}
+
+.falling-image.top-left {
+  left: 20px;
+  animation-delay: 0s;
+}
+
+.falling-image.top-right {
+  right: 10px;
+  animation-delay: 5s;
+}
+
+/* Falling animation */
+@keyframes fall {
+  0% {
+    transform: translateY(-100%);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(calc(100vh - 100px));
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Existing styles */
 .right-section {
   background: linear-gradient(135deg, #e3fdfd, #cbf1f5, #a6e3e9);
   height: 100%;
