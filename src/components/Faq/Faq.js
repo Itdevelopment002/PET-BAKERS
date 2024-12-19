@@ -62,15 +62,15 @@ const Faq = () => {
   return (
     <div className="font-fam">
       {/* FAQ Header */}
-      <div className="faq-container text-center py-5 fs-6">
-        <h5 className="fw-bold fs-1 text-start mb-4">FAQ's</h5>
-        <p style={{ fontSize: "20px" }}>
+      <div className="faq-container text-center py-5 fs-6 FAQ">
+        <h5 className="fw-bold fs-1 text-start mb-4 ">FAQ's</h5>
+        <p>
           Celebrate your adorable and mischievous pet with our selection of
           treats and snacks! <br />
           Explore our range of cakes, cupcakes, treats, and cute accessories to
           spoil your furry friend.
         </p>
-        <p style={{ fontSize: "20px" }}>
+        <p>
           Every item we bake is completely safe for pets, gluten-free, and
           handcrafted with high-quality, responsibly-sourced ingredients—the
           same ones we feed our own pets!
@@ -93,7 +93,10 @@ const Faq = () => {
                     aria-expanded="false"
                     aria-controls={`collapse${index}`}
                   >
-                    <LuCake className="me-2" />
+                    <LuCake
+                      className="me-2"
+                      style={{ color: "#ff69b4", fontSize: "24px" }} // Colorful Cake Icon
+                    />
                     {faq.question}
                   </button>
                 </h2>
