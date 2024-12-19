@@ -2,12 +2,64 @@
     --font-heading-family: "Cooper BT", serif;
 }
 
-.hello{
+.contact-heading{
     font-family: var(--font-heading-family);
+    color:#127979;
+}
+.contact-sub-heading{
+    font-family: var(--font-heading-family);
+    font-weight: 500;
+    color:#127979;
+}
+.custom-form-label{
+    font-family: var(--font-heading-family);
+    font-weight: 500;
+    color:#161616;
+    
 }
 
 .form-control:focus {
-    border-color: black; /* Change border color to black */
-    outline: none; /* Remove default outline */
-    box-shadow: none; /* Remove the shadow */
+    border-color: black; 
+    outline: none;
+    box-shadow: none;
   }
+
+  .submit-btn{
+    margin: 10px auto !important;
+  }
+
+  .social-icon {
+    transition: transform 0.3s ease; /* Smooth transition for zoom effect */
+  }
+  
+  .social-icon:hover {
+    transform: scale(1.2); /* Slight zoom effect */
+  }
+  
+
+  /* Change the background color of input fields before the user starts typing */
+.custom-input {
+    background-color: #f7f7f7; /* Light gray color for background */
+    border-color: #ccc; /* Lighter border color */
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  }
+  
+  /* Change the color of the placeholder text */
+  .custom-input::placeholder {
+    color: #888; /* Lighter color for the placeholder text */
+  }
+  
+  /* When the user starts typing, change background and border color */
+  .custom-input:focus {
+    background-color: #ffffff; /* White background on focus */
+    border-color: #127979; /* Your provided color for the border */
+    box-shadow: 0 0 5px rgba(18, 121, 121, 0.6); /* Soft glow with your color */
+  }
+  
+  /* For textarea */
+  .custom-input:focus {
+    background-color: #ffffff;
+    border-color: #127979;
+    box-shadow: 0 0 5px rgba(18, 121, 121, 0.6);
+  }
+  

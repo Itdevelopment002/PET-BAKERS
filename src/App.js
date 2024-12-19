@@ -7,6 +7,7 @@ import Contact from './components/Contact/Contact';
 import Faq from './components/Faq/Faq';
 import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy';
 import Home from './components/Home/Home';
+import CupCake from './components/CupCake/CupCake';
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
           <Route path="/pages/contact" element={<Contact />} />
           <Route path="/pages/faqs" element={<Faq />} />
           <Route path="/policies/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/collections/cup-cakes" element={<CupCake />} />
+
+
         </Routes>
       </main>
       <Footer />
