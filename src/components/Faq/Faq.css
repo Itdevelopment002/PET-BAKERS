@@ -11,6 +11,14 @@
     margin-left: 25rem; /* 5rem margin on the left */
     margin-right: 25rem; /* 5rem margin on the right */
   }
+  .FAQ h5{
+    color:#0f7b7b;
+  }
+
+  .FAQ p{
+    font-size: 18px;
+    font-weight: 500;
+  }
   
   /* Responsive Margins for Smaller Screens */
   @media (max-width: 992px) {
@@ -84,29 +92,35 @@
       margin-left: 1rem;
       margin-right: 1rem;
     }
+
   }
   
   /* FAQ Accordion Styling */
   .accordion-item {
     margin-bottom: 1rem; /* Space between items */
-    border-radius: 5px; /* Rounded corners */
+    border-radius: 10px; /* Rounded corners */
     border: 1px solid #ddd; /* Light border */
     overflow: hidden; /* Ensures border radius applies to children */
   }
   
   .accordion-button {
-    font-weight: bold;
+    font-weight:500;
     background-color: #ffffff; /* Default white background */
     border: none; /* Remove border */
     box-shadow: none; /* Remove box shadow */
     outline: none; /* Remove outline */
+    font-size: 18px;
     transition: background-color 0.3s ease; /* Smooth hover effect */
+    color:#084a4a;
   }
   
   .accordion-button:hover {
-    background-color: #f0f8f8; /* Light background on hover */
-    text-decoration: underline; /* Underline on hover */
+    background-color: #f0f8f8;
+    text-decoration: underline;
+    text-underline-offset: 3px; /* Adjust for underline position */
+    text-decoration-thickness: 1px; /* Adjust for thinner underline */
   }
+  
   
   .accordion-button:focus {
     box-shadow: none; /* Remove box shadow when focused */
@@ -121,8 +135,8 @@
   .accordion-body {
     background-color: #f8f9fa; /* Light background for answers */
     color: #333;
-    padding: 1rem;
-    font-size: 20px;
+    padding: 2rem;
+    font-size: 18px;
     border: 1px solid #ddd;
     white-space: pre-line; /* Allows line breaks in text */
   }
@@ -143,4 +157,10 @@
   /* Additional fixes for hover effects */
   .accordion-button:hover::after {
     text-decoration: none; /* Remove underline on the arrow */
+  }
+
+  @media (max-width: 448px) {
+    .accordion-body{
+      padding: 1rem;
+    }
   }
