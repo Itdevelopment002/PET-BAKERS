@@ -1,0 +1,107 @@
+.right-section {
+  background: linear-gradient(135deg, #e3fdfd, #cbf1f5, #a6e3e9);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Clean and modern login form */
+.login-form {
+  width: 100%;
+  max-width: 400px;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-in-out;
+  text-align: center;
+}
+
+/* Subtle fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Logo with transition effect */
+.logo-animation {
+  width: 100px;
+  height: auto;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Form title */
+.login-form h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #0f7b7b;
+  margin-bottom: 0.5rem;
+}
+
+.login-form h4 {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.login-form p {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 1.5rem;
+}
+
+/* Input fields */
+.login-form .form-control {
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  font-size: 0.95rem;
+  transition: border-color 0.3s;
+}
+
+.login-form .form-control:focus {
+  border-color: #34d1d1;
+  outline: none;
+  box-shadow: 0 0 8px rgba(52, 209, 209, 0.2);
+}
+
+/* Buttons with gradient */
+.login-form button {
+  background: linear-gradient(135deg, #0f7b7b, #34d1d1);
+  border: none;
+  padding: 0.75rem;
+  width: 100%;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.login-form button:hover {
+  background: linear-gradient(135deg, #34d1d1, #0f7b7b);
+  transform: scale(1.05);
+}
+
+/* Links */
+.login-form a {
+  color: #0f7b7b;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.login-form a:hover {
+  color: #34d1d1;
+}

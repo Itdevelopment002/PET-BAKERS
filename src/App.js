@@ -7,11 +7,13 @@ import Contact from './components/Contact/Contact';
 import Faq from './components/Faq/Faq';
 import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy';
 import Home from './components/Home/Home';
+import Login from './components/Login/Login';
 import CupCake from './components/CupCake/CupCake';
 
 function App() {
   return (
     <Router>
+      {/* <Login /> */}
       <Header />
       <main style={{ minHeight: '80vh' }}>
         <Routes>
