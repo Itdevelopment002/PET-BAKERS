@@ -16,7 +16,7 @@ import PawSnack from './components/PawSnack/PawSnack';
 function App() {
   return (
     <Router>
-      <Login />
+      {/* <Login /> */}
       <Header />
       <main style={{ minHeight: '80vh' }}>
         <Routes>

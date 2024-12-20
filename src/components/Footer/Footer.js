@@ -77,7 +77,7 @@ const Footer = () => {
 
                     <div className="col-md-3 col-sm-6 mb-4">
                         <h5>Company Details</h5>
-                        <p className="company-info">Furry Baker</p>
+                        <p className="company-info">Pet Baker</p>
                         <p className="company-info">Delhi/NCR</p>
                     </div>
                 </div>
@@ -102,7 +102,7 @@ const Footer = () => {
                     </div>
                     <div className="col-md-12 text">
                         <p className="footer-note mb-0">
-                            © {new Date().getFullYear()} Furry Baker. All Rights Reserved.
+                            © {new Date().getFullYear()} Pet Baker. All Rights Reserved.
                         </p>
                     </div>
                 </div>
