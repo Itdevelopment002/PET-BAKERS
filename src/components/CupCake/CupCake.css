@@ -1,5 +1,35 @@
 /* General styling */
-.cupcake-shop-page .shop-title {
+.shop-title-container {
+  display: flex;
+  align-items: center; /* Vertically center align everything */
+  justify-content: center; /* Horizontally center the content */
+  gap: 15px; /* Space between heading and lines */
+  width: 100%;
+}
+
+.line-wrapper {
+  display: flex;
+  flex-direction: column; /* Stack the lines vertically */
+  justify-content: center; /* Center the lines vertically within their container */
+  align-items: center; /* Center align both lines */
+  gap: 5px; /* Space between the big and small lines */
+  margin-top: -15px;
+
+}
+
+.full-width {
+  width: 100px; /* Bigger line width */
+  background-color:#b87b6e;
+  height: 3px;
+}
+
+.small-width {
+  width: 60px; /* Smaller line width */
+  background-color:#b99276;
+  height: 2px;
+}
+
+.shop-title-container .shop-title {
   font-size: 2.5rem;
   font-weight: bold;
   color: #996357;
@@ -7,6 +37,29 @@
   font-family: var(--font-heading-family);
 }
 
+@media (max-width: 768px) {
+  .shop-title-container .shop-title {
+    font-size: 2rem !important;
+  }
+}
+@media (max-width: 448px) {
+  .shop-title-container .shop-title {
+    font-size: 1.8rem !important;
+  }
+
+  .shop-title-container {
+    gap: 10px; /* Space between heading and lines */
+  }
+  
+  .full-width {
+    width: 60px; /* Bigger line width */
+  }
+  
+  .small-width {
+    width: 40px; /* Smaller line width */
+
+  }
+}
 .results-info {
   display: flex;
   justify-content: space-between;
