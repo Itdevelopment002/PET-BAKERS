@@ -1,160 +1,275 @@
 /* General styling */
 .cupcake-shop-page .shop-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #996357;
-    text-align: center;
-    font-family: var(--font-heading-family);
-  }
-  
-  .results-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  /* Product card */
-  .product-card {
-    border: none;
-    transition: box-shadow 0.3s ease-in-out;
-    background-color: rgba(252, 244, 231, 0.954);
-    border-radius: 8px;
-    position: relative;
-  }
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #996357;
+  text-align: center;
+  font-family: var(--font-heading-family);
+}
 
-  
-  .product-card:hover {
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
-  }
-  
-  .product-image {
-    height: 250px;
-    object-fit: cover;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-  }
+.results-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  .badge-sale {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background-color: #fff;
-    color: #0c5757;
-    padding: 8px 12px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    border-radius: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Action icons */
-  .action-icons {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-  
-  .product-card:hover .action-icons {
-    opacity: 1;
-  }
-  
-  .action-icons .icon {
-    font-size: 2.2rem;
-    color: #0f7b7b;
-    background-color: #fff;
-    padding: 8px;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* .action-icons .icon:hover {
+/* Product card */
+.product-card {
+  border: none;
+  transition: box-shadow 0.3s ease-in-out;
+  background-color: rgba(252, 244, 231, 0.954);
+  border-radius: 8px;
+  position: relative;
+}
+
+
+.product-card:hover {
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+  height: 250px;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.badge-sale {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #fff;
+  color: #0c5757;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Action icons */
+.action-icons {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.product-card:hover .action-icons {
+  opacity: 1;
+}
+
+.action-icons .icon {
+  font-size: 2.2rem;
+  color: #0f7b7b;
+  background-color: #fff;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* .action-icons .icon:hover {
     background-color: #f29282;
   } */
 
-  .tooltip-container {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-  }
-  
-  .tooltip-text {
-    visibility: hidden;
-    background-color: #0f7b7b; /* Tooltip background color */
-    color: white;
-    text-align: center;
-    border-radius: 5px;
-    padding: 5px 12px;
-    white-space: nowrap; /* Ensure text doesn't break */
-    font-size: 0.85rem;
-    font-weight: 500;
-  
-    /* Position tooltip to the right with arrow */
-    position: absolute;
-    right: 120%; /* Position it horizontally to the right */
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 0;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-  }
-  
-  .tooltip-text::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 100%;
-    transform: translateY(-50%);
-    border-width: 8px;
-    border-style: solid;
-    border-color: transparent transparent transparent #0f7b7b;
-  }
-  
-  .tooltip-container:hover .tooltip-text {
-    visibility: visible;
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  background-color: #0f7b7b;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px 12px;
+  white-space: nowrap;
+  font-size: 0.85rem;
+  font-weight: 500;
+
+  /* Position tooltip to the right with arrow */
+  position: absolute;
+  right: 120%;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent transparent transparent #0f7b7b;
+}
+
+.tooltip-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+/* Icon Styling */
+.icon {
+  font-size: 24px;
+  color: #2a1714;
+}
+
+
+
+.product-type {
+  color: #f96c53;
+  font-size: 0.9rem;
+}
+
+.product-name {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #39291b;
+}
+
+.product-price {
+  font-size: 1rem;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+.sale-price {
+  color: #9f5646;
+  font-weight: bold;
+}
+
+.rating {
+  font-size: 1.2rem;
+  color: #f5b82a;
+}
+
+/* modal design of selected items */
+.modal-fade-out {
+  animation: smoothFadeOutTopToBottom 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes smoothFadeOutTopToBottom {
+  0% {
     opacity: 1;
+    transform: translateY(0); /* Start at the top */
   }
-  
-  
-  /* Icon Styling */
-  .icon {
-    font-size: 24px; /* Adjust icon size */
-    color: #2a1714; /* Icon color */
+  20% {
+    opacity: 0.9;
+    transform: translateY(5px); /* Begin a gentle downward move */
   }
-  
-  
-  
-  .product-type {
-    color: #f96c53;
-    font-size: 0.9rem;
+  40% {
+    opacity: 0.7;
+    transform: translateY(15px); /* Continue moving down */
   }
-  
-  .product-name {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #39291b;
+  60% {
+    opacity: 0.5;
+    transform: translateY(25px); /* Midway point, visibly fading */
   }
-  
-  .product-price {
-    font-size: 1rem;
+  80% {
+    opacity: 0.3;
+    transform: translateY(35px); /* Near the end, almost invisible */
   }
-  
-  .original-price {
-    text-decoration: line-through;
-    color: #aaa;
+  100% {
+    opacity: 0;
+    transform: translateY(50px); /* Fully moved down and invisible */
   }
-  
-  .sale-price {
-    color: #9f5646;
-    font-weight: bold;
-  }
-  
-  .rating {
-    font-size: 1.2rem;
-    color: #f5b82a;
-  }
-  
+}
+
+
+.modal-body-color{
+  background-color: #f1f1f1;
+}
+.custom-open-modal{
+  margin-bottom: -20px;
+}
+
+.custom-modal-site {
+  font-family: var(--font-heading-family);
+  color:#0c5757;
+}
+
+.custom-modal-header {
+  font-family: var(--font-heading-family);
+}
+
+.size-selection label {
+  font-size: 18px;
+  font-family: var(--font-heading-family);
+}
+.Quantity-selection label {
+  font-size: 18px;
+  font-family: var(--font-heading-family);
+}
+.flavour-selection label {
+  font-size: 18px;
+  font-family: var(--font-heading-family);
+}
+.custom-dropdown-margin{
+  margin-right: 40px;
+}
+
+.add-cart-button {
+  font-family: var(--font-heading-family);
+  font-weight: 500;
+  color:#ffffff;
+  background-color: #0f7b7b;
+}
+
+
+.custom-dropdown {
+  border-radius: 30px;
+  padding: 0.3rem 1.5rem;
+  font-weight: 500;
+  color: #093737;
+  background-color: #f8f9fa;
+  border: 1px solid #ccc;
+  transition: all 0.3s ease;
+  appearance: none; /* Hide the default dropdown arrow */
+  position: relative;
+  font-family: var(--font-heading-family);
+
+}
+
+.custom-dropdown:hover {
+  background-color: #e9ecef;
+  border-color: #888;
+}
+
+.custom-dropdown:focus {
+  border-color: #000;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+
+.modal-footer a i {
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.modal-footer a:hover i {
+  transform: scale(1.2);
+  opacity: 0.8;
+}
+
+.modal-footer span {
+  font-size: 18px;
+  font-weight: 500;
+  margin-right: 10px;
+  font-family: var(--font-heading-family);
+  color:#0c5757;
+}
