@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaCaretDown, FaHamburger, FaSearch, FaUser, FaShoppingCart } from 'react-icons/fa';
 import './Header.css';
+import './SearchModal.css';
 
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -33,75 +34,75 @@ const Header = () => {
 
     return (
         <>
-<div className="custom-utility-bar custom-gradient">
-  <div className="container">
-    {/* Carousel Section */}
-    <div id="announcementCarousel" className="carousel slide custom-carousel" data-bs-ride="carousel">
-      <div className="carousel-inner custom-carousel-inner">
-        {/* Slide 1 */}
-        <div className="carousel-item active custom-carousel-item">
-          <div className="custom-announcement-message text-center py-2">
-            <a
-              href="https://thefurrybaker.com/collections/paw-snacks"
-              className="custom-announcement-link text-decoration-none text-dark d-inline-flex align-items-center"
-            >
-              <span className="me-2 custom-announcement-message">
-                Buy 3 Gluten-free Cookies & Pay for only 2 - Order Now
-              </span>
-              <svg
-                viewBox="0 0 14 10"
-                fill="none"
-                aria-hidden="true"
-                className="custom-icon-arrow"
-                xmlns="http://www.w3.org/2000/svg"
-                style={{ width: "16px", height: "10px" }}
-              >
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M8.537.808a.5.5 0 01.817-.162l4 4a.5.5 0 010 .708l-4 4a.5.5 0 11-.708-.708L11.793 5.5H1a.5.5 0 010-1h10.793L8.646 1.354a.5.5 0 01-.109-.546z"
-                  fill="currentColor"
-                />
-              </svg>
-            </a>
-          </div>
-        </div>
+            <div className="custom-utility-bar custom-gradient">
+                <div className="container">
+                    {/* Carousel Section */}
+                    <div id="announcementCarousel" className="carousel slide custom-carousel" data-bs-ride="carousel">
+                        <div className="carousel-inner custom-carousel-inner">
+                            {/* Slide 1 */}
+                            <div className="carousel-item active custom-carousel-item">
+                                <div className="custom-announcement-message text-center py-2">
+                                    <a
+                                        href="https://thefurrybaker.com/collections/paw-snacks"
+                                        className="custom-announcement-link text-decoration-none text-dark d-inline-flex align-items-center"
+                                    >
+                                        <span className="me-2 custom-announcement-message">
+                                            Buy 3 Gluten-free Cookies & Pay for only 2 - Order Now
+                                        </span>
+                                        <svg
+                                            viewBox="0 0 14 10"
+                                            fill="none"
+                                            aria-hidden="true"
+                                            className="custom-icon-arrow"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            style={{ width: "16px", height: "10px" }}
+                                        >
+                                            <path
+                                                fillRule="evenodd"
+                                                clipRule="evenodd"
+                                                d="M8.537.808a.5.5 0 01.817-.162l4 4a.5.5 0 010 .708l-4 4a.5.5 0 11-.708-.708L11.793 5.5H1a.5.5 0 010-1h10.793L8.646 1.354a.5.5 0 01-.109-.546z"
+                                                fill="currentColor"
+                                            />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
 
-        {/* Slide 2 */}
-        <div className="carousel-item custom-carousel-item">
-          <div className="custom-announcement-message text-center py-2">
-            <p className="custom-announcement-message mb-0">
-              Provide free delivery for orders above ₹1799 - Use Coupon{" "}
-              <span className="text-primary">FURRYSHIP</span>
-            </p>
-          </div>
-        </div>
-      </div>
+                            {/* Slide 2 */}
+                            <div className="carousel-item custom-carousel-item">
+                                <div className="custom-announcement-message text-center py-2">
+                                    <p className="custom-announcement-message mb-0">
+                                        Provide free delivery for orders above ₹1799 - Use Coupon{" "}
+                                        <span className="text-primary">FURRYSHIP</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 
-      {/* Previous Button */}
-      <button
-        className="custom-carousel-prev"
-        type="button"
-        data-bs-target="#announcementCarousel"
-        data-bs-slide="prev"
-      >
-        <span className="custom-carousel-prev-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Previous</span>
-      </button>
+                        {/* Previous Button */}
+                        <button
+                            className="custom-carousel-prev"
+                            type="button"
+                            data-bs-target="#announcementCarousel"
+                            data-bs-slide="prev"
+                        >
+                            <span className="custom-carousel-prev-icon" aria-hidden="true"></span>
+                            <span className="visually-hidden">Previous</span>
+                        </button>
 
-      {/* Next Button */}
-      <button
-        className="custom-carousel-next"
-        type="button"
-        data-bs-target="#announcementCarousel"
-        data-bs-slide="next"
-      >
-        <span className="custom-carousel-next-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Next</span>
-      </button>
-    </div>
-  </div>
-</div>
+                        {/* Next Button */}
+                        <button
+                            className="custom-carousel-next"
+                            type="button"
+                            data-bs-target="#announcementCarousel"
+                            data-bs-slide="next"
+                        >
+                            <span className="custom-carousel-next-icon" aria-hidden="true"></span>
+                            <span className="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
 
 
             <header className="header-wrapper">
@@ -225,22 +226,52 @@ const Header = () => {
                 </div>
 
                 {/* Modal for Search */}
-                <div className="modal fade" id="searchModal" tabIndex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+                <div
+                    className="modal fade"
+                    id="searchModal"
+                    tabIndex="-1"
+                    aria-labelledby="searchModalLabel"
+                    aria-hidden="true"
+                >
                     <div className="modal-dialog">
-                        <div className="modal-content">
-                            <div className="modal-header">
-                                <h5 className="modal-title" id="searchModalLabel">Search</h5>
-                                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div className="modal-body">
-                                <form action="/search" method="get" role="search">
-                                    <input className="form-control" type="search" name="q" placeholder="Search" />
-                                    <button type="submit" className="btn btn-primary mt-3">Search</button>
-                                </form>
+                        <div className="modal-content modal-css border-0">
+                            <div className="modal-body p-0 mt-4">
+                                <div className="d-flex justify-content-between align-items-center">
+                                    <form
+                                        action="/search"
+                                        method="get"
+                                        role="search"
+                                        className="search-form flex-grow-1"
+                                    >
+                                        <div className="search-bar d-flex align-items-center">
+                                            <input
+                                                className="form-control search-input"
+                                                type="search"
+                                                name="q"
+                                                placeholder="Search"
+                                                aria-label="Search"
+                                            />
+                                            <button type="submit" className="search-btn">
+                                                <i className="bi bi-search"></i>
+                                            </button>
+                                        </div>
+                                    </form>
+
+                                    <button
+                                        type="button"
+                                        className="close-btn"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"
+                                    >
+                                        <i className="bi bi-x"></i>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+
             </header>
         </>
     );
