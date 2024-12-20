@@ -11,14 +11,13 @@
   --partition-thickness: 2px; /* Thickness of the partition lines */
 }
 
-/* General Styles */
 .privacy-wrapper {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
   font-family: 'Arial', sans-serif;
   color: #444;
-  font-size: var(--base-font-size); /* Base font size */
+  font-size: var(--base-font-size); 
 }
 
 /* Hero Section */
