@@ -12,11 +12,14 @@ import CupCake from './components/CupCake/CupCake';
 import MiniCake from './components/MiniCake/MiniCake';
 import Cake from './components/Cake/Cake';
 import PawSnack from './components/PawSnack/PawSnack';
+import RefundPolicy from './components/RefundPoilcy/RefundPolicy';
+import Tac from './components/Tac/Tac';
+import ShippingPolicy from './components/ShippingPolicy/ShippingPolicy';
 
 function App() {
   return (
     <Router>
-      <Login />
+      {/* <Login /> */}
       <Header />
       <main style={{ minHeight: '80vh' }}>
         <Routes>
@@ -25,6 +28,9 @@ function App() {
           <Route path="/pages/contact" element={<Contact />} />
           <Route path="/pages/faqs" element={<Faq />} />
           <Route path="/policies/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/policies/refund-policy" element={<RefundPolicy />} />
+          <Route path="/policies/terms-of-service" element={<Tac />} />
+          <Route path="/policies/shipping-policy" element={<ShippingPolicy />} />
           <Route path="/collections/cup-cakes" element={<CupCake />} />
           <Route path="/collections/mini-cakes" element={<MiniCake />} />
           <Route path="/collections/cakes" element={<Cake />} />

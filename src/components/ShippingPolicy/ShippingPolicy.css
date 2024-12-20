@@ -1,0 +1,36 @@
+:root {
+    --font-heading-family: "Cooper BT", serif;
+}
+
+.font-fam{
+    font-family: var(--font-heading-family);
+}
+
+.shipping-container {
+    margin-left: 25rem; /* 5rem margin on the left */
+    margin-right: 25rem; /* 5rem margin on the right */
+  }
+  .SHIPPING h5{
+    color:#0f7b7b;
+  }
+
+  .SHIPPING p{
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  /* Responsive Margins for Smaller Screens */
+  @media (max-width: 992px) {
+    .shipping-container {
+      margin-left: 2rem; /* Reduced margin on medium screens */
+      margin-right: 2rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .shipping-container {
+      margin-left: 1rem; /* Further reduced margin on smaller screens */
+      margin-right: 1rem;
+    }
+  }
+  
