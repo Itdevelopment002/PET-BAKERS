@@ -343,6 +343,10 @@
             transform: translateY(0);
         }
     }
+    .modal-dialog {
+        margin-top:17px;
+    }
+
 
 
 
@@ -438,7 +442,11 @@
             transform: translateY(0);
         }
     }
+    .modal-dialog {
+        margin-top:20px;
+    }
 
+   
 
 }
 @media (max-width: 510px) {
@@ -493,6 +501,9 @@
             opacity: 1;
             transform: translateY(0);
         }
+    }
+    .modal-dialog {
+        margin-top:40px;
     }
 
 }
@@ -573,6 +584,10 @@
             opacity: 1;
             transform: translateY(0);
         }
+    }
+
+    .modal-dialog {
+        margin-top:36px;
     }
 
 }
