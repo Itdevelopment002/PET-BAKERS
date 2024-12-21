@@ -225,11 +225,12 @@
 .header__icon {
     font-size: 1.4rem;
     color: #fff;
-    transition: color 0.3s;
+    transition: transform 0.3s ease;
+
 }
 
 .header__icon:hover {
-    color: #007bff;
+    transform: scale(1.2); /* Adjust the scale as needed */
 }
 
 .header__search {
@@ -245,6 +246,8 @@
 .header__icon--search:hover {
     color: #007bff;
 }
+
+
 
 
   
@@ -281,7 +284,7 @@
     }
 
     .header-wrapper {
-        padding: 10px 15px;
+        padding: 15px 15px;
     }
 
     .header__heading {
@@ -587,7 +590,7 @@
     }
 
     .modal-dialog {
-        margin-top:36px;
+        margin-top:39px;
     }
 
 }
