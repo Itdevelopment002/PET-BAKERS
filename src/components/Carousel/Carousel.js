@@ -14,6 +14,7 @@ const Carousel = () => {
         id="carouselExampleIndicators"
         className="carousel slide"
         data-bs-ride="carousel"
+        data-bs-pause="false"
       >
         {/* Carousel Indicators */}
         <div className="carousel-indicators">
