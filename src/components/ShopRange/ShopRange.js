@@ -22,7 +22,7 @@ const ShopRange = () => {
             />
             <div className="card-body-bottom text-center">
               <Link
-                to="/collections/cup-cakes"
+                to="/cup-cakes"
                 className="text-decoration-none"
               >
                 <h6 className="">Cup Cakes &rarr;</h6>
@@ -40,7 +40,7 @@ const ShopRange = () => {
               alt="Cakes"
             />
             <div className="card-body-bottom text-center">
-              <Link to="/collections/cakes" className="text-decoration-none">
+              <Link to="/cakes" className="text-decoration-none">
                 <h6 className="">Cakes &rarr;</h6>
               </Link>
             </div>
@@ -57,7 +57,7 @@ const ShopRange = () => {
             />
             <div className="card-body-bottom text-center">
               <Link
-                to="/collections/mini-cakes"
+                to="/mini-cakes"
                 className="text-decoration-none"
               >
                 <h6 className="">Mini Cakes &rarr;</h6>
@@ -92,7 +92,7 @@ const ShopRange = () => {
             />
             <div className="card-body-bottom text-center">
               <Link
-                to="/collections/paw-snacks"
+                to="/paw-snacks"
                 className="text-decoration-none"
               >
                 <h6 className="">Treats &rarr;</h6>
