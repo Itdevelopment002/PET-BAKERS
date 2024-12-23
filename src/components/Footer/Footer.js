@@ -20,22 +20,22 @@ const Footer = () => {
                                 </a>
                             </li>
                             <li>
-                                <a href="/policies/privacy-policy" className="footer-link">
+                                <a href="/privacy-policy" className="footer-link">
                                     Privacy Policy
                                 </a>
                             </li>
                             <li>
-                                <a href="/policies/refund-policy" className="footer-link">
+                                <a href="/refund-policy" className="footer-link">
                                     Refund Policy
                                 </a>
                             </li>
                             <li>
-                                <a href="/policies/terms-of-service" className="footer-link">
+                                <a href="/terms-of-service" className="footer-link">
                                     Terms & Condition
                                 </a>
                             </li>
                             <li>
-                                <a href="/policies/shipping-policy" className="footer-link">
+                                <a href="/shipping-policy" className="footer-link">
                                     Shipping Policy
                                 </a>
                             </li>

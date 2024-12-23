@@ -26,21 +26,21 @@ function App() {
       <Header />
       <main style={{ minHeight: '80vh' }}>
         <Routes>
-          <Route path="/" element={<Navigate to="/home" />}exact />
+          <Route path="/" element={<Navigate to="/home" />}/>
           <Route path="/home" element={<Home />} />
-          <Route path="/pages/about-us" element={<About />} />
-          <Route path="/pages/cart" element={<Cart />} />
-          <Route path="/pages/contact" element={<Contact />} />
-          <Route path="/pages/faqs" element={<Faq />} />
-          <Route path="/policies/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/policies/refund-policy" element={<RefundPolicy />} />
-          <Route path="/policies/terms-of-service" element={<Tac />} />
-          <Route path="/policies/shipping-policy" element={<ShippingPolicy />} />
-          <Route path="/collections/cup-cakes" element={<CupCake />} />
-          <Route path="/collections/mini-cakes" element={<MiniCake />} />
+          <Route path="/about-us" element={<About />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/faqs" element={<Faq />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/refund-policy" element={<RefundPolicy />} />
+          <Route path="/terms-of-service" element={<Tac />} />
+          <Route path="/shipping-policy" element={<ShippingPolicy />} />
+          <Route path="/cup-cakes" element={<CupCake />} />
+          <Route path="/mini-cakes" element={<MiniCake />} />
           <Route path="/minicake/:id" element={<MiniCakeDetails />} />
-          <Route path="/collections/cakes" element={<Cake />} />
-          <Route path="/collections/paw-snacks" element={<PawSnack />} />
+          <Route path="/cakes" element={<Cake />} />
+          <Route path="/paw-snacks" element={<PawSnack />} />
         </Routes>
       </main>
       <Footer />

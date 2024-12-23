@@ -139,7 +139,7 @@ const Header = () => {
                             </li>
                             <li className="nav-item">
                                 <a
-                                    href="/pages/about-us"
+                                    href="/about-us"
                                     className={`nav-link ${activeLink === 'about-us' ? 'active' : ''}`}
                                     onClick={() => handleNavLinkClick('about-us')}
                                 >
@@ -159,15 +159,15 @@ const Header = () => {
                                     Shop <FaCaretDown />
                                 </a>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a className="dropdown-item" href="/collections/cup-cakes">Cup Cakes</a></li>
-                                    <li><a className="dropdown-item" href="/collections/mini-cakes">Mini Cakes</a></li>
-                                    <li><a className="dropdown-item" href="/collections/cakes">Cakes</a></li>
-                                    <li><a className="dropdown-item" href="/collections/paw-snacks">Paw Snacks</a></li>
+                                    <li><a className="dropdown-item" href="/cup-cakes">Cup Cakes</a></li>
+                                    <li><a className="dropdown-item" href="/mini-cakes">Mini Cakes</a></li>
+                                    <li><a className="dropdown-item" href="/cakes">Cakes</a></li>
+                                    <li><a className="dropdown-item" href="/paw-snacks">Paw Snacks</a></li>
                                 </ul>
                             </li>
                             <li className="nav-item">
                                 <a
-                                    href="/pages/contact"
+                                    href="/contact"
                                     className={`nav-link ${activeLink === 'contact' ? 'active' : ''}`}
                                     onClick={() => handleNavLinkClick('contact')}
                                 >
@@ -176,7 +176,7 @@ const Header = () => {
                             </li>
                             <li className="nav-item">
                                 <a
-                                    href="/pages/faqs"
+                                    href="/faqs"
                                     className={`nav-link ${activeLink === 'faqs' ? 'active' : ''}`}
                                     onClick={() => handleNavLinkClick('faqs')}
                                 >
@@ -185,7 +185,7 @@ const Header = () => {
                             </li>
                             <li className="nav-item">
                                 <a
-                                    href="/policies/privacy-policy"
+                                    href="/privacy-policy"
                                     className={`nav-link ${activeLink === 'privacy-policy' ? 'active' : ''}`}
                                     onClick={() => handleNavLinkClick('privacy-policy')}
                                 >
@@ -215,7 +215,7 @@ const Header = () => {
                             <FaUser />
                         </a>
                         <a
-                            href="pages/cart"
+                            href="/cart"
                             className="header__icon"
                             id="cart-icon-bubble"
                             style={{ background: "none", textDecoration: "none" }}
