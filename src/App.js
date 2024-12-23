@@ -17,6 +17,9 @@ import RefundPolicy from './components/RefundPoilcy/RefundPolicy';
 import Tac from './components/Tac/Tac';
 import ShippingPolicy from './components/ShippingPolicy/ShippingPolicy';
 import MiniCakeDetails from './components/MiniCakeDetails/MiniCakeDetails';
+import CupCakeDetails from './components/CupCakeDetails/CupCakeDetails';
+import CakeDetails from './components/CakeDetails/CakeDetails';
+import PawSnackDetails from './components/PawSnackDetails/PawSnackDetails';
 
 function App() {
   return (
@@ -35,10 +38,13 @@ function App() {
           <Route path="/policies/terms-of-service" element={<Tac />} />
           <Route path="/policies/shipping-policy" element={<ShippingPolicy />} />
           <Route path="/collections/cup-cakes" element={<CupCake />} />
+          <Route path="/cupcake/:id" element={<CupCakeDetails />} />
           <Route path="/collections/mini-cakes" element={<MiniCake />} />
           <Route path="/minicake/:id" element={<MiniCakeDetails />} />
           <Route path="/collections/cakes" element={<Cake />} />
+          <Route path="/cake/:id" element={<CakeDetails />} />
           <Route path="/collections/paw-snacks" element={<PawSnack />} />
+          <Route path="/pawsnack/:id" element={<PawSnackDetails />} />
         </Routes>
       </main>
       <Footer />

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import "./Cake.css";
 import { FaCartPlus, FaEye } from "react-icons/fa";
 import { Modal } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 const Cake = () => {
   const [selectedCake, setSelectedCake] = useState(null);
@@ -10,6 +11,7 @@ const Cake = () => {
   const [selectedFlavour, setSelectedFlavour] = useState(""); // Flavour state
   const [selectedSize, setSelectedSize] = useState(null);
   const modalRef = useRef(null);
+  const navigate = useNavigate();
   useEffect(() => {
     const handleOutsideClick = (event) => {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
@@ -18,14 +20,13 @@ const Cake = () => {
     };
 
     if (showModal) {
-      document.addEventListener('mousedown', handleOutsideClick);
+      document.addEventListener("mousedown", handleOutsideClick);
     }
 
     return () => {
-      document.removeEventListener('mousedown', handleOutsideClick);
+      document.removeEventListener("mousedown", handleOutsideClick);
     };
   }, [showModal]);
-
 
   const cakes = [
     {
@@ -38,9 +39,9 @@ const Cake = () => {
       image:
         "https://thefurrybaker.com/cdn/shop/files/Pawshape_Cake.jpg?v=1725600469&width=360",
       thumbnailImages: [
-        'https://thefurrybaker.com/cdn/shop/files/FloweCupcake.jpg?v=1721821133&width=360',
-        'https://thefurrybaker.com/cdn/shop/files/dog-face_Cupcakes.jpg?v=1725601359&width=360',
-        'https://thefurrybaker.com/cdn/shop/files/cupcake.jpg?v=1715335098&width=360',
+        "https://thefurrybaker.com/cdn/shop/files/FloweCupcake.jpg?v=1721821133&width=360",
+        "https://thefurrybaker.com/cdn/shop/files/dog-face_Cupcakes.jpg?v=1725601359&width=360",
+        "https://thefurrybaker.com/cdn/shop/files/cupcake.jpg?v=1715335098&width=360",
       ],
     },
     {
@@ -53,9 +54,9 @@ const Cake = () => {
       image:
         "https://thefurrybaker.com/cdn/shop/files/A5F3C249-EE63-48E9-83AF-8C8D51E7C78E.png?v=1733116406&width=360",
       thumbnailImages: [
-        'https://thefurrybaker.com/cdn/shop/files/FloweCupcake.jpg?v=1721821133&width=360',
-        'https://thefurrybaker.com/cdn/shop/files/dog-face_Cupcakes.jpg?v=1725601359&width=360',
-        'https://thefurrybaker.com/cdn/shop/files/cupcake.jpg?v=1715335098&width=360',
+        "https://thefurrybaker.com/cdn/shop/files/FloweCupcake.jpg?v=1721821133&width=360",
+        "https://thefurrybaker.com/cdn/shop/files/dog-face_Cupcakes.jpg?v=1725601359&width=360",
+        "https://thefurrybaker.com/cdn/shop/files/cupcake.jpg?v=1715335098&width=360",
       ],
     },
     {
@@ -68,9 +69,9 @@ const Cake = () => {
       image:
         "https://thefurrybaker.com/cdn/shop/files/IMG_6641.jpg?v=1730656458&width=360",
       thumbnailImages: [
-        'https://thefurrybaker.com/cdn/shop/files/FloweCupcake.jpg?v=1721821133&width=360',
-        'https://thefurrybaker.com/cdn/shop/files/dog-face_Cupcakes.jpg?v=1725601359&width=360',
-        'https://thefurrybaker.com/cdn/shop/files/cupcake.jpg?v=1715335098&width=360',
+        "https://thefurrybaker.com/cdn/shop/files/FloweCupcake.jpg?v=1721821133&width=360",
+        "https://thefurrybaker.com/cdn/shop/files/dog-face_Cupcakes.jpg?v=1725601359&width=360",
+        "https://thefurrybaker.com/cdn/shop/files/cupcake.jpg?v=1715335098&width=360",
       ],
     },
     {
@@ -83,9 +84,9 @@ const Cake = () => {
       image:
         "https://thefurrybaker.com/cdn/shop/files/21351B11-EC82-4E99-9452-513AD304297E.jpg?v=1731335397&width=360",
       thumbnailImages: [
-        'https://thefurrybaker.com/cdn/shop/files/FloweCupcake.jpg?v=1721821133&width=360',
-        'https://thefurrybaker.com/cdn/shop/files/dog-face_Cupcakes.jpg?v=1725601359&width=360',
-        'https://thefurrybaker.com/cdn/shop/files/cupcake.jpg?v=1715335098&width=360',
+        "https://thefurrybaker.com/cdn/shop/files/FloweCupcake.jpg?v=1721821133&width=360",
+        "https://thefurrybaker.com/cdn/shop/files/dog-face_Cupcakes.jpg?v=1725601359&width=360",
+        "https://thefurrybaker.com/cdn/shop/files/cupcake.jpg?v=1715335098&width=360",
       ],
     },
     {
@@ -98,9 +99,9 @@ const Cake = () => {
       image:
         "https://thefurrybaker.com/cdn/shop/files/IMG_6468_4f6fd9c2-2019-4fdd-8e93-5a7240eaddd4.jpg?v=1729876934&width=360",
       thumbnailImages: [
-        'https://thefurrybaker.com/cdn/shop/files/FloweCupcake.jpg?v=1721821133&width=360',
-        'https://thefurrybaker.com/cdn/shop/files/dog-face_Cupcakes.jpg?v=1725601359&width=360',
-        'https://thefurrybaker.com/cdn/shop/files/cupcake.jpg?v=1715335098&width=360',
+        "https://thefurrybaker.com/cdn/shop/files/FloweCupcake.jpg?v=1721821133&width=360",
+        "https://thefurrybaker.com/cdn/shop/files/dog-face_Cupcakes.jpg?v=1725601359&width=360",
+        "https://thefurrybaker.com/cdn/shop/files/cupcake.jpg?v=1715335098&width=360",
       ],
     },
     {
@@ -113,9 +114,9 @@ const Cake = () => {
       image:
         "https://thefurrybaker.com/cdn/shop/files/IMG_4669.jpg?v=1725606798&width=360",
       thumbnailImages: [
-        'https://thefurrybaker.com/cdn/shop/files/FloweCupcake.jpg?v=1721821133&width=360',
-        'https://thefurrybaker.com/cdn/shop/files/dog-face_Cupcakes.jpg?v=1725601359&width=360',
-        'https://thefurrybaker.com/cdn/shop/files/cupcake.jpg?v=1715335098&width=360',
+        "https://thefurrybaker.com/cdn/shop/files/FloweCupcake.jpg?v=1721821133&width=360",
+        "https://thefurrybaker.com/cdn/shop/files/dog-face_Cupcakes.jpg?v=1725601359&width=360",
+        "https://thefurrybaker.com/cdn/shop/files/cupcake.jpg?v=1715335098&width=360",
       ],
     },
   ];
@@ -123,10 +124,7 @@ const Cake = () => {
   const handleView = (cake) => {
     const price =
       cake.off > 0
-        ? Math.round(
-          cake.originalPrice -
-          (cake.originalPrice * cake.off) / 100
-        )
+        ? Math.round(cake.originalPrice - (cake.originalPrice * cake.off) / 100)
         : Math.round(cake.originalPrice);
 
     setSelectedCake({ ...cake, price });
@@ -138,6 +136,10 @@ const Cake = () => {
       ...prevState,
       image, // Update main image when thumbnail is clicked
     }));
+  };
+
+  const handleCardClick = (id) => {
+    navigate(`/cake/${id}`);
   };
 
   const handleAddToCart = (cake) => {
@@ -197,7 +199,8 @@ const Cake = () => {
           <div className="line full-width"></div>
           <div className="line small-width"></div>
         </div>
-      </div>      <div className="results-info mb-3">
+      </div>{" "}
+      <div className="results-info mb-3">
         <p>Showing all {cakes.length} results</p>
         <div className="dropdown">
           <button className="btn btn-light dropdown-toggle" type="button">
@@ -209,13 +212,16 @@ const Cake = () => {
         {cakes.map((cake) => {
           const price =
             cake.off > 0
-              ? cake.originalPrice -
-              (cake.originalPrice * cake.off) / 100
+              ? cake.originalPrice - (cake.originalPrice * cake.off) / 100
               : cake.originalPrice;
 
           return (
             <div key={cake.id} className="col-md-3 col-sm-6">
-              <div className="card product-card">
+              <div
+                className="card product-card"
+                onClick={() => handleCardClick(cake.id)}
+                style={{ cursor: "pointer" }}
+              >
                 <div className="position-relative">
                   <img
                     src={cake.image}
@@ -232,14 +238,20 @@ const Cake = () => {
                     <div className="tooltip-container">
                       <FaCartPlus
                         className="icon cart-icon"
-                        onClick={() => handleAddToCart(cake)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleAddToCart(cake)
+                        }}
                       />
                       <span className="tooltip-text">Add to Cart</span>
                     </div>
                     <div className="tooltip-container">
                       <FaEye
                         className="icon view-icon"
-                        onClick={() => handleView(cake)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleView(cake)
+                        }}
                       />
                       <span className="tooltip-text">View Items</span>
                     </div>
@@ -264,21 +276,18 @@ const Cake = () => {
                       </span>
                     )}
                   </div>
-                  <div className="rating mt-2">
-                    {renderStars(cake.rating)}
-                  </div>
+                  <div className="rating mt-2">{renderStars(cake.rating)}</div>
                 </div>
               </div>
             </div>
           );
         })}
       </div>
-
       {selectedCake && showModal && (
         <div
           className="modal fade show d-block modal-fade-in"
           tabIndex="-1"
-          style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)' }}
+          style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}
         >
           <div className="modal-dialog modal-lg" ref={modalRef}>
             <div className="modal-content">
@@ -288,14 +297,12 @@ const Cake = () => {
                 className="btn-close btn-sm position-absolute top-0 end-0 m-3"
                 style={{
                   zIndex: 1050,
-                  outline: 'none',
-                  boxShadow: 'none',
-                  transform: 'scale(0.8)',
+                  outline: "none",
+                  boxShadow: "none",
+                  transform: "scale(0.8)",
                 }}
                 onClick={() => setShowModal(false)}
               ></button>
-
-
 
               <div className="modal-body modal-body-color">
                 <div className="row custom-open-modal">
@@ -305,7 +312,7 @@ const Cake = () => {
                       src={selectedCake.image}
                       alt={selectedCake.name}
                       className="img-fluid rounded"
-                      style={{ width: '350px', height: '350px' }}
+                      style={{ width: "350px", height: "350px" }}
                     />
 
                     {/* Thumbnail Gallery */}
@@ -316,35 +323,45 @@ const Cake = () => {
                           src={thumb}
                           alt={`Thumbnail ${index + 1}`}
                           className="img-thumbnail me-2"
-                          style={{ width: '60px', height: '60px', cursor: 'pointer' }}
+                          style={{
+                            width: "60px",
+                            height: "60px",
+                            cursor: "pointer",
+                          }}
                           onClick={() => handleThumbnailClick(thumb)} // Update the main image when clicked
                         />
                       ))}
                     </div>
                   </div>
 
-
                   {/* Right Section: Details */}
                   <div className="col-md-6 py-4 px-3">
-                    <h4 className="fw-bold mt-3 custom-modal-site fs-6 text-muted">Pet Bakers</h4>
-                    <h4 className="fw-bold mt-1 custom-modal-header">{selectedCake.name}</h4>
+                    <h4 className="fw-bold mt-3 custom-modal-site fs-6 text-muted">
+                      Pet Bakers
+                    </h4>
+                    <h4 className="fw-bold mt-1 custom-modal-header">
+                      {selectedCake.name}
+                    </h4>
                     {/* <h5 className="text-danger fw-bold">₹{selectedCake.price.toFixed(2)}</h5> */}
                     <div className="product-price mb-2">
-                      <span className="original-price fw-bold ">₹{selectedCake.originalPrice.toFixed(2)}</span>
-                      <span className="sale-price ms-2 fw-bold ">₹{selectedCake.price.toFixed(2)}</span>
-
+                      <span className="original-price fw-bold ">
+                        ₹{selectedCake.originalPrice.toFixed(2)}
+                      </span>
+                      <span className="sale-price ms-2 fw-bold ">
+                        ₹{selectedCake.price.toFixed(2)}
+                      </span>
                     </div>
-                    <p className="text-muted" style={{ fontSize: '0.9rem' }}>
-                      Lorem Ipsum is simply dummy text of the printing and typesetting
-                      industry. Lorem Ipsum has been the industry's standard dummy text
-                      ever since the 1500s.
+                    <p className="text-muted" style={{ fontSize: "0.9rem" }}>
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry. Lorem Ipsum has been the industry's
+                      standard dummy text ever since the 1500s.
                     </p>
-
-
 
                     {/* Size Selection */}
                     <div className="mb-3 size-selection">
-                      <label className="form-label fw-bold text-muted">Size</label>
+                      <label className="form-label fw-bold text-muted">
+                        Size
+                      </label>
                       <div className="d-flex justify-content-start align-items-center gap-3">
                         <input
                           type="radio"
@@ -352,18 +369,22 @@ const Cake = () => {
                           id="sizePack4"
                           className="btn-check"
                           autoComplete="off"
-                          checked={selectedSize === 'Pack of 4'}
-                          onChange={() => handleSizeChange('Pack of 4')}
+                          checked={selectedSize === "Pack of 4"}
+                          onChange={() => handleSizeChange("Pack of 4")}
                         />
                         <label
                           htmlFor="sizePack4"
-                          className={`btn ${selectedSize === 'Pack of 4' ? 'btn-dark' : 'btn-outline-dark'}`}
+                          className={`btn ${
+                            selectedSize === "Pack of 4"
+                              ? "btn-dark"
+                              : "btn-outline-dark"
+                          }`}
                           style={{
-                            borderRadius: '30px',
-                            padding: '0.2rem 1.3rem',
-                            fontSize: '13px',
-                            transition: 'all 0.3s ease',
-                            cursor: 'pointer',
+                            borderRadius: "30px",
+                            padding: "0.2rem 1.3rem",
+                            fontSize: "13px",
+                            transition: "all 0.3s ease",
+                            cursor: "pointer",
                           }}
                         >
                           Pack of 4
@@ -375,18 +396,22 @@ const Cake = () => {
                           id="sizePack6"
                           className="btn-check"
                           autoComplete="off"
-                          checked={selectedSize === 'Pack of 6'}
-                          onChange={() => handleSizeChange('Pack of 6')}
+                          checked={selectedSize === "Pack of 6"}
+                          onChange={() => handleSizeChange("Pack of 6")}
                         />
                         <label
                           htmlFor="sizePack6"
-                          className={`btn ${selectedSize === 'Pack of 6' ? 'btn-dark' : 'btn-outline-dark'}`}
+                          className={`btn ${
+                            selectedSize === "Pack of 6"
+                              ? "btn-dark"
+                              : "btn-outline-dark"
+                          }`}
                           style={{
-                            borderRadius: '30px',
-                            padding: '0.2rem 1.3rem',
-                            fontSize: '13px',
-                            transition: 'all 0.3s ease',
-                            cursor: 'pointer',
+                            borderRadius: "30px",
+                            padding: "0.2rem 1.3rem",
+                            fontSize: "13px",
+                            transition: "all 0.3s ease",
+                            cursor: "pointer",
                           }}
                         >
                           Pack of 6
@@ -395,7 +420,9 @@ const Cake = () => {
                     </div>
 
                     <div className="mb-3 flavour-selection">
-                      <label className="form-label fw-bold mb-2 text-muted">Flavour Selection</label>
+                      <label className="form-label fw-bold mb-2 text-muted">
+                        Flavour Selection
+                      </label>
                       <div className="position-relative custom-dropdown-margin">
                         <select
                           className="form-select custom-dropdown"
@@ -414,7 +441,9 @@ const Cake = () => {
 
                     {/* Quantity Selection */}
                     <div className="mb-3 Quantity-selection">
-                      <label className="form-label fw-bold mb-2 text-muted">Quantity</label>
+                      <label className="form-label fw-bold mb-2 text-muted">
+                        Quantity
+                      </label>
                       <div className="row g-2 align-items-center">
                         {/* Input Group Column */}
                         <div className="col-12 col-md-5">
@@ -422,7 +451,9 @@ const Cake = () => {
                             <button
                               className="btn btn-sm btn-outline-secondary"
                               type="button"
-                              onClick={() => setQuantity((prev) => Math.max(prev - 1, 1))}
+                              onClick={() =>
+                                setQuantity((prev) => Math.max(prev - 1, 1))
+                              }
                             >
                               -
                             </button>
@@ -430,7 +461,9 @@ const Cake = () => {
                               type="number"
                               className="form-control text-center"
                               value={quantity}
-                              onChange={(e) => setQuantity(Number(e.target.value))}
+                              onChange={(e) =>
+                                setQuantity(Number(e.target.value))
+                              }
                               min="1"
                             />
                             <button
@@ -463,7 +496,7 @@ const Cake = () => {
               <div className="modal-footer d-flex flex-column align-items-center">
                 <div className="d-flex flex-row justify-content-center gap-4 align-items-center">
                   {/* Share Text */}
-                  <span className='share-text'>Share:</span>
+                  <span className="share-text">Share:</span>
 
                   {/* Facebook */}
                   <a
@@ -471,7 +504,7 @@ const Cake = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-center d-flex align-items-center"
-                    style={{ color: '#1877F2', textDecoration: 'none' }}
+                    style={{ color: "#1877F2", textDecoration: "none" }}
                   >
                     <i className="fab fa-facebook fa-1x"></i>
                   </a>
@@ -481,7 +514,7 @@ const Cake = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-center d-flex align-items-center"
-                    style={{ color: '#1DA1F2', textDecoration: 'none' }}
+                    style={{ color: "#1DA1F2", textDecoration: "none" }}
                   >
                     <i className="fab fa-twitter fa-1x"></i>
                   </a>
@@ -491,7 +524,7 @@ const Cake = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-center d-flex align-items-center"
-                    style={{ color: '#E60023', textDecoration: 'none' }}
+                    style={{ color: "#E60023", textDecoration: "none" }}
                   >
                     <i className="fab fa-pinterest fa-1x"></i>
                   </a>
@@ -501,14 +534,12 @@ const Cake = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-center d-flex align-items-center"
-                    style={{ color: '#25D366', textDecoration: 'none' }}
+                    style={{ color: "#25D366", textDecoration: "none" }}
                   >
                     <i className="fab fa-whatsapp fa-1x"></i>
                   </a>
                 </div>
               </div>
-
-
             </div>
           </div>
         </div>
