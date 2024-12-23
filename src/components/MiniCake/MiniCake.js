@@ -85,7 +85,7 @@ const MiniCake = () => {
     {
       id: 4,
       name: "Barklicious Cake",
-      off: 0,
+      off: 20,
       originalPrice: 749,
       type: "Caramel",
       rating: 3.7,
@@ -221,22 +221,49 @@ const MiniCake = () => {
     setFilters((prevFilters) => ({ ...prevFilters, [key]: value }));
   };
 
+  
 
   useEffect(() => {
     let cakes = minicakes;
 
+    // Filter by flavor
     if (filters.flavor) cakes = cakes.filter((cake) => cake.type === filters.flavor);
+
+    // Filter by price range
     if (filters.priceRange)
       cakes = cakes.filter(
         (cake) => cake.originalPrice >= filters.priceRange[0] && cake.originalPrice <= filters.priceRange[1]
       );
+
+    // Filter by rating
     if (filters.rating) cakes = cakes.filter((cake) => cake.rating >= filters.rating);
+
+    // Filter by availability
     if (filters.availability)
       cakes = cakes.filter((cake) => cake.available === (filters.availability === "Available"));
+
+    // Filter by size
     if (filters.size) cakes = cakes.filter((cake) => cake.size === filters.size);
 
+    // Filter by discount (percentage off)
+    if (filters.discountRange) {
+    // Check if the discount range is set to show all offers (0-100%)
+    if (filters.discountRange[0] === 0 && filters.discountRange[1] === 100) {
+      // Allow all cakes, including those with 0% off
+      cakes = cakes.filter((cake) => cake.off >= 0);
+    } else {
+      // Filter by specific discount range
+      cakes = cakes.filter(
+        (cake) => cake.off >= filters.discountRange[0] && cake.off <= filters.discountRange[1]
+      );
+    }
+  }
+
+    // Set the filtered cakes
     setFilteredCakes(cakes);
   }, [filters, minicakes]);
+
+
 
 
   return (
@@ -258,6 +285,7 @@ const MiniCake = () => {
               <option value="Vanilla">Vanilla</option>
             </select>
           </div>
+
           <div className="filter-group">
             <label>Price Range</label>
             <input
@@ -271,41 +299,105 @@ const MiniCake = () => {
             />
             <p>Up to ₹{filters.priceRange[1]}</p>
           </div>
-          <div className="filter-group">
+
+          <div className="filter-group rating-filter">
             <label>Rating</label>
-            <select
-              className="form-select"
-              onChange={(e) => handleFilterChange("rating", parseFloat(e.target.value))}
-            >
-              <option value="0">All</option>
-              <option value="3">3 & above</option>
-              <option value="4">4 & above</option>
-              <option value="5">5</option>
-            </select>
+            <div className="star-rating">
+              {[1, 2, 3, 4, 5].map((star) => (
+                <span
+                  key={star}
+                  className={`star ${filters.rating >= star ? "active" : ""}`}
+                  onClick={() => handleFilterChange("rating", star)}
+                >
+                  ★
+                </span>
+              ))}
+            </div>
+            <p className="selected-rating">
+              {filters.rating ? `${filters.rating} & above` : "All ratings"}
+            </p>
           </div>
+
+
+
           <div className="filter-group">
-            <label>Availability</label>
-            <select
-              className="form-select"
-              onChange={(e) => handleFilterChange("availability", e.target.value)}
-            >
-              <option value="">All</option>
-              <option value="Available">Available</option>
-              <option value="Out of Stock">Out of Stock</option>
-            </select>
+            <label>Offers</label>
+            <div className="offer-options">
+              <label className="custom-radio">
+                <input
+                  type="radio"
+                  name="offer"
+                  value="0"
+                  onChange={(e) => handleFilterChange("discountRange", [0, 100])}  // No filter, all offers
+                />
+                <span>All Offers</span>
+              </label>
+              <label className="custom-radio">
+                <input
+                  type="radio"
+                  name="offer"
+                  value="20"
+                  onChange={(e) => handleFilterChange("discountRange", [1, 20])}  // Up to 20% Off
+                />
+                <span>Upto 20% Off</span>
+              </label>
+              <label className="custom-radio">
+                <input
+                  type="radio"
+                  name="offer"
+                  value="40"
+                  onChange={(e) => handleFilterChange("discountRange", [1, 40])}  // Up to 40% Off
+                />
+                <span>Upto 40% Off</span>
+              </label>
+              <label className="custom-radio">
+                <input
+                  type="radio"
+                  name="offer"
+                  value="60"
+                  onChange={(e) => handleFilterChange("discountRange", [1, 60])}  // Up to 60% Off
+                />
+                <span>Upto 60% Off</span>
+              </label>
+            </div>
           </div>
+
+
+
+
+
           <div className="filter-group">
             <label>Size</label>
-            <select
-              className="form-select"
-              onChange={(e) => handleFilterChange("size", e.target.value)}
-            >
-              <option value="">All</option>
-              <option value="Small">Small</option>
-              <option value="Medium">Medium</option>
-              <option value="Large">Large</option>
-            </select>
+            <div className="size-options">
+              <label className="custom-checkbox d-flex align-items-center">
+                <input
+                  type="checkbox"
+                  value="Small"
+                  onChange={(e) => handleFilterChange("size", e.target.value, e.target.checked)}
+                />
+                <span>Small</span>
+              </label>
+
+              <label className="custom-checkbox d-flex align-items-center">
+                <input
+                  type="checkbox"
+                  value="Medium"
+                  onChange={(e) => handleFilterChange("size", e.target.value, e.target.checked)}
+                />
+                <span>Medium</span>
+              </label>
+              <label className="custom-checkbox d-flex align-items-center">
+                <input
+                  type="checkbox"
+                  value="Large"
+                  onChange={(e) => handleFilterChange("size", e.target.value, e.target.checked)}
+                />
+                <span>Large</span>
+              </label>
+            </div>
           </div>
+
+
         </div>
 
 
@@ -350,7 +442,7 @@ const MiniCake = () => {
                     onClick={() => handleCardClick(minicake.id)}
                     style={{ cursor: "pointer" }}
                   >
-                    <div className="position-relative" onClick={() => navigate(`/minicake/${minicake.id}`)}>
+                    <div className="position-relative">
                       <img
                         src={minicake.image}
                         alt={minicake.name}
