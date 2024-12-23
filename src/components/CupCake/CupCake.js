@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
-import './CupCake.css';
-import { FaCartPlus, FaEye } from 'react-icons/fa';
+import React, { useState, useEffect, useRef } from "react";
+import "./CupCake.css";
+import { FaCartPlus, FaEye } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const CupCake = () => {
   const [selectedCupcake, setSelectedCupcake] = useState(null);
@@ -9,6 +10,7 @@ const CupCake = () => {
   const [selectedFlavour, setSelectedFlavour] = useState(""); // Flavour state
   const [selectedSize, setSelectedSize] = useState(null);
   const modalRef = useRef(null);
+  const navigate = useNavigate();
   useEffect(() => {
     const handleOutsideClick = (event) => {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
@@ -17,98 +19,103 @@ const CupCake = () => {
     };
 
     if (showModal) {
-      document.addEventListener('mousedown', handleOutsideClick);
+      document.addEventListener("mousedown", handleOutsideClick);
     }
 
     return () => {
-      document.removeEventListener('mousedown', handleOutsideClick);
+      document.removeEventListener("mousedown", handleOutsideClick);
     };
   }, [showModal]);
-
 
   const cupcakes = [
     {
       id: 1,
-      name: 'Pawfect Chocolate Cupcake',
+      name: "Pawfect Chocolate Cupcake",
       off: 50,
       originalPrice: 500,
-      type: 'Chocolate',
+      type: "Chocolate",
       rating: 3.5,
-      image: 'https://thefurrybaker.com/cdn/shop/files/FloweCupcake.jpg?v=1721821133&width=360',
+      image:
+        "https://thefurrybaker.com/cdn/shop/files/FloweCupcake.jpg?v=1721821133&width=360",
       thumbnailImages: [
-        'https://thefurrybaker.com/cdn/shop/files/FloweCupcake.jpg?v=1721821133&width=360',
-        'https://thefurrybaker.com/cdn/shop/files/dog-face_Cupcakes.jpg?v=1725601359&width=360',
-        'https://thefurrybaker.com/cdn/shop/files/cupcake.jpg?v=1715335098&width=360',
+        "https://thefurrybaker.com/cdn/shop/files/FloweCupcake.jpg?v=1721821133&width=360",
+        "https://thefurrybaker.com/cdn/shop/files/dog-face_Cupcakes.jpg?v=1725601359&width=360",
+        "https://thefurrybaker.com/cdn/shop/files/cupcake.jpg?v=1715335098&width=360",
       ],
     },
     {
       id: 2,
-      name: 'Puppy Love Strawberry Cupcake',
+      name: "Puppy Love Strawberry Cupcake",
       off: 100,
       originalPrice: 550,
-      type: 'Strawberry',
+      type: "Strawberry",
       rating: 3.5,
-      image: 'https://thefurrybaker.com/cdn/shop/files/cupcake.jpg?v=1715335098&width=360',
+      image:
+        "https://thefurrybaker.com/cdn/shop/files/cupcake.jpg?v=1715335098&width=360",
       thumbnailImages: [
-        'https://thefurrybaker.com/cdn/shop/files/cupcake.jpg?v=1715335098&width=360',
-        'https://thefurrybaker.com/cdn/shop/files/FloweCupcake.jpg?v=1721821133&width=360',
-        'https://thefurrybaker.com/cdn/shop/files/dog-face_Cupcakes.jpg?v=1725601359&width=360',
+        "https://thefurrybaker.com/cdn/shop/files/cupcake.jpg?v=1715335098&width=360",
+        "https://thefurrybaker.com/cdn/shop/files/FloweCupcake.jpg?v=1721821133&width=360",
+        "https://thefurrybaker.com/cdn/shop/files/dog-face_Cupcakes.jpg?v=1725601359&width=360",
       ],
     },
     {
       id: 3,
-      name: 'Bark Berry Vanilla Cupcake',
+      name: "Bark Berry Vanilla Cupcake",
       off: 80,
       originalPrice: 450,
-      type: 'Vanilla',
+      type: "Vanilla",
       rating: 5,
-      image: 'https://thefurrybaker.com/cdn/shop/files/dog-face_Cupcakes.jpg?v=1725601359&width=360',
+      image:
+        "https://thefurrybaker.com/cdn/shop/files/dog-face_Cupcakes.jpg?v=1725601359&width=360",
       thumbnailImages: [
-        'https://thefurrybaker.com/cdn/shop/files/FloweCupcake.jpg?v=1721821133&width=360',
-        'https://thefurrybaker.com/cdn/shop/files/dog-face_Cupcakes.jpg?v=1725601359&width=360',
-        'https://thefurrybaker.com/cdn/shop/files/cupcake.jpg?v=1715335098&width=360',
+        "https://thefurrybaker.com/cdn/shop/files/FloweCupcake.jpg?v=1721821133&width=360",
+        "https://thefurrybaker.com/cdn/shop/files/dog-face_Cupcakes.jpg?v=1725601359&width=360",
+        "https://thefurrybaker.com/cdn/shop/files/cupcake.jpg?v=1715335098&width=360",
       ],
     },
     {
       id: 4,
-      name: 'Golden Retriever Caramel Cupcake',
+      name: "Golden Retriever Caramel Cupcake",
       off: 20,
       originalPrice: 600,
-      type: 'Caramel',
+      type: "Caramel",
       rating: 4.5,
-      image: 'https://thefurrybaker.com/cdn/shop/files/Cucakes_ShihTzu.jpg?v=1725600670&width=360',
+      image:
+        "https://thefurrybaker.com/cdn/shop/files/Cucakes_ShihTzu.jpg?v=1725600670&width=360",
       thumbnailImages: [
-        'https://thefurrybaker.com/cdn/shop/files/FloweCupcake.jpg?v=1721821133&width=360',
-        'https://thefurrybaker.com/cdn/shop/files/dog-face_Cupcakes.jpg?v=1725601359&width=360',
-        'https://thefurrybaker.com/cdn/shop/files/cupcake.jpg?v=1715335098&width=360',
+        "https://thefurrybaker.com/cdn/shop/files/FloweCupcake.jpg?v=1721821133&width=360",
+        "https://thefurrybaker.com/cdn/shop/files/dog-face_Cupcakes.jpg?v=1725601359&width=360",
+        "https://thefurrybaker.com/cdn/shop/files/cupcake.jpg?v=1715335098&width=360",
       ],
     },
     {
       id: 5,
-      name: 'Furry Peanut Butter Cupcake',
+      name: "Furry Peanut Butter Cupcake",
       off: 0,
       originalPrice: 500,
-      type: 'Peanut Butter',
+      type: "Peanut Butter",
       rating: 5,
-      image: 'https://thefurrybaker.com/cdn/shop/files/Taco_Cupcake.jpg?v=1725600544&width=360',
+      image:
+        "https://thefurrybaker.com/cdn/shop/files/Taco_Cupcake.jpg?v=1725600544&width=360",
       thumbnailImages: [
-        'https://thefurrybaker.com/cdn/shop/files/FloweCupcake.jpg?v=1721821133&width=360',
-        'https://thefurrybaker.com/cdn/shop/files/dog-face_Cupcakes.jpg?v=1725601359&width=360',
-        'https://thefurrybaker.com/cdn/shop/files/cupcake.jpg?v=1715335098&width=360',
+        "https://thefurrybaker.com/cdn/shop/files/FloweCupcake.jpg?v=1721821133&width=360",
+        "https://thefurrybaker.com/cdn/shop/files/dog-face_Cupcakes.jpg?v=1725601359&width=360",
+        "https://thefurrybaker.com/cdn/shop/files/cupcake.jpg?v=1715335098&width=360",
       ],
     },
     {
       id: 6,
-      name: 'Tail-Wagging Banana Cupcake',
+      name: "Tail-Wagging Banana Cupcake",
       off: 30,
       originalPrice: 480,
-      type: 'Banana',
+      type: "Banana",
       rating: 4.5,
-      image: 'https://thefurrybaker.com/cdn/shop/files/Bella_Coco_Cupcake.jpg?v=1725600510&width=360',
+      image:
+        "https://thefurrybaker.com/cdn/shop/files/Bella_Coco_Cupcake.jpg?v=1725600510&width=360",
       thumbnailImages: [
-        'https://thefurrybaker.com/cdn/shop/files/FloweCupcake.jpg?v=1721821133&width=360',
-        'https://thefurrybaker.com/cdn/shop/files/dog-face_Cupcakes.jpg?v=1725601359&width=360',
-        'https://thefurrybaker.com/cdn/shop/files/cupcake.jpg?v=1715335098&width=360',
+        "https://thefurrybaker.com/cdn/shop/files/FloweCupcake.jpg?v=1721821133&width=360",
+        "https://thefurrybaker.com/cdn/shop/files/dog-face_Cupcakes.jpg?v=1725601359&width=360",
+        "https://thefurrybaker.com/cdn/shop/files/cupcake.jpg?v=1715335098&width=360",
       ],
     },
   ];
@@ -117,9 +124,8 @@ const CupCake = () => {
     const price =
       cupcake.off > 0
         ? Math.round(
-          cupcake.originalPrice -
-          (cupcake.originalPrice * cupcake.off) / 100
-        )
+            cupcake.originalPrice - (cupcake.originalPrice * cupcake.off) / 100
+          )
         : Math.round(cupcake.originalPrice);
     setSelectedCupcake({ ...cupcake, price });
     setShowModal(true);
@@ -131,10 +137,13 @@ const CupCake = () => {
     }));
   };
 
+  const handleCardClick = (id) => {
+    navigate(`/cupcake/${id}`);
+  };
+
   const handleAddToCart = (cupcake) => {
     alert(`${cupcake.name} added to cart!`);
   };
-
 
   const handleSizeChange = (size) => {
     setSelectedSize(size);
@@ -203,13 +212,19 @@ const CupCake = () => {
           const price =
             cupcake.off > 0
               ? cupcake.originalPrice -
-              (cupcake.originalPrice * cupcake.off) / 100
+                (cupcake.originalPrice * cupcake.off) / 100
               : cupcake.originalPrice;
 
           return (
-
-            <div key={cupcake.id} className=" col-12 col-lg-3 col-md-4 col-sm-6 ">
-              <div className="card product-card">
+            <div
+              key={cupcake.id}
+              className=" col-12 col-lg-3 col-md-4 col-sm-6 "
+            >
+              <div
+                className="card product-card"
+                onClick={() => handleCardClick(cupcake.id)}
+                style={{ cursor: "pointer" }}
+              >
                 <div className="position-relative">
                   <img
                     src={cupcake.image}
@@ -226,14 +241,20 @@ const CupCake = () => {
                     <div className="tooltip-container">
                       <FaCartPlus
                         className="icon cart-icon"
-                        onClick={() => handleAddToCart(cupcake)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleAddToCart(cupcake)
+                        }}
                       />
                       <span className="tooltip-text">Add to Cart</span>
                     </div>
                     <div className="tooltip-container">
                       <FaEye
                         className="icon view-icon"
-                        onClick={() => handleView(cupcake)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleView(cupcake)
+                        }}
                       />
                       <span className="tooltip-text">View Items</span>
                     </div>
@@ -268,12 +289,11 @@ const CupCake = () => {
         })}
       </div>
 
-
       {selectedCupcake && showModal && (
         <div
           className="modal fade show d-block modal-fade-in"
           tabIndex="-1"
-          style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)' }}
+          style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}
         >
           <div className="modal-dialog modal-lg" ref={modalRef}>
             <div className="modal-content">
@@ -283,14 +303,12 @@ const CupCake = () => {
                 className="btn-close btn-sm position-absolute top-0 end-0 m-3"
                 style={{
                   zIndex: 1050,
-                  outline: 'none',
-                  boxShadow: 'none',
-                  transform: 'scale(0.8)',
+                  outline: "none",
+                  boxShadow: "none",
+                  transform: "scale(0.8)",
                 }}
                 onClick={() => setShowModal(false)}
               ></button>
-
-
 
               <div className="modal-body modal-body-color">
                 <div className="row custom-open-modal">
@@ -300,7 +318,7 @@ const CupCake = () => {
                       src={selectedCupcake.image}
                       alt={selectedCupcake.name}
                       className="img-fluid rounded"
-                      style={{ width: '350px', height: '350px' }}
+                      style={{ width: "350px", height: "350px" }}
                     />
 
                     {/* Thumbnail Gallery */}
@@ -311,35 +329,45 @@ const CupCake = () => {
                           src={thumb}
                           alt={`Thumbnail ${index + 1}`}
                           className="img-thumbnail me-2"
-                          style={{ width: '60px', height: '60px', cursor: 'pointer' }}
+                          style={{
+                            width: "60px",
+                            height: "60px",
+                            cursor: "pointer",
+                          }}
                           onClick={() => handleThumbnailClick(thumb)} // Update the main image when clicked
                         />
                       ))}
                     </div>
                   </div>
 
-
                   {/* Right Section: Details */}
                   <div className="col-md-6 py-4 px-3">
-                    <h4 className="fw-bold mt-3 custom-modal-site fs-6 text-muted">Furry Frostings</h4>
-                    <h4 className="fw-bold mt-1 custom-modal-header">{selectedCupcake.name}</h4>
+                    <h4 className="fw-bold mt-3 custom-modal-site fs-6 text-muted">
+                      Furry Frostings
+                    </h4>
+                    <h4 className="fw-bold mt-1 custom-modal-header">
+                      {selectedCupcake.name}
+                    </h4>
                     {/* <h5 className="text-danger fw-bold">₹{selectedCupcake.price.toFixed(2)}</h5> */}
                     <div className="product-price mb-2">
-                      <span className="original-price fw-bold ">₹{selectedCupcake.originalPrice.toFixed(2)}</span>
-                      <span className="sale-price ms-2 fw-bold ">₹{selectedCupcake.price.toFixed(2)}</span>
-
+                      <span className="original-price fw-bold ">
+                        ₹{selectedCupcake.originalPrice.toFixed(2)}
+                      </span>
+                      <span className="sale-price ms-2 fw-bold ">
+                        ₹{selectedCupcake.price.toFixed(2)}
+                      </span>
                     </div>
-                    <p className="text-muted" style={{ fontSize: '0.9rem' }}>
-                      Lorem Ipsum is simply dummy text of the printing and typesetting
-                      industry. Lorem Ipsum has been the industry's standard dummy text
-                      ever since the 1500s.
+                    <p className="text-muted" style={{ fontSize: "0.9rem" }}>
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry. Lorem Ipsum has been the industry's
+                      standard dummy text ever since the 1500s.
                     </p>
-
-
 
                     {/* Size Selection */}
                     <div className="mb-3 size-selection">
-                      <label className="form-label fw-bold text-muted">Size</label>
+                      <label className="form-label fw-bold text-muted">
+                        Size
+                      </label>
                       <div className="d-flex justify-content-start align-items-center gap-3">
                         <input
                           type="radio"
@@ -347,18 +375,22 @@ const CupCake = () => {
                           id="sizePack4"
                           className="btn-check"
                           autoComplete="off"
-                          checked={selectedSize === 'Pack of 4'}
-                          onChange={() => handleSizeChange('Pack of 4')}
+                          checked={selectedSize === "Pack of 4"}
+                          onChange={() => handleSizeChange("Pack of 4")}
                         />
                         <label
                           htmlFor="sizePack4"
-                          className={`btn ${selectedSize === 'Pack of 4' ? 'btn-dark' : 'btn-outline-dark'}`}
+                          className={`btn ${
+                            selectedSize === "Pack of 4"
+                              ? "btn-dark"
+                              : "btn-outline-dark"
+                          }`}
                           style={{
-                            borderRadius: '30px',
-                            padding: '0.2rem 1.3rem',
-                            fontSize: '13px',
-                            transition: 'all 0.3s ease',
-                            cursor: 'pointer',
+                            borderRadius: "30px",
+                            padding: "0.2rem 1.3rem",
+                            fontSize: "13px",
+                            transition: "all 0.3s ease",
+                            cursor: "pointer",
                           }}
                         >
                           Pack of 4
@@ -370,18 +402,22 @@ const CupCake = () => {
                           id="sizePack6"
                           className="btn-check"
                           autoComplete="off"
-                          checked={selectedSize === 'Pack of 6'}
-                          onChange={() => handleSizeChange('Pack of 6')}
+                          checked={selectedSize === "Pack of 6"}
+                          onChange={() => handleSizeChange("Pack of 6")}
                         />
                         <label
                           htmlFor="sizePack6"
-                          className={`btn ${selectedSize === 'Pack of 6' ? 'btn-dark' : 'btn-outline-dark'}`}
+                          className={`btn ${
+                            selectedSize === "Pack of 6"
+                              ? "btn-dark"
+                              : "btn-outline-dark"
+                          }`}
                           style={{
-                            borderRadius: '30px',
-                            padding: '0.2rem 1.3rem',
-                            fontSize: '13px',
-                            transition: 'all 0.3s ease',
-                            cursor: 'pointer',
+                            borderRadius: "30px",
+                            padding: "0.2rem 1.3rem",
+                            fontSize: "13px",
+                            transition: "all 0.3s ease",
+                            cursor: "pointer",
                           }}
                         >
                           Pack of 6
@@ -390,7 +426,9 @@ const CupCake = () => {
                     </div>
 
                     <div className="mb-3 flavour-selection">
-                      <label className="form-label fw-bold mb-2 text-muted">Flavour Selection</label>
+                      <label className="form-label fw-bold mb-2 text-muted">
+                        Flavour Selection
+                      </label>
                       <div className="position-relative custom-dropdown-margin">
                         <select
                           className="form-select custom-dropdown"
@@ -409,7 +447,9 @@ const CupCake = () => {
 
                     {/* Quantity Selection */}
                     <div className="mb-3 Quantity-selection">
-                      <label className="form-label fw-bold mb-2 text-muted">Quantity</label>
+                      <label className="form-label fw-bold mb-2 text-muted">
+                        Quantity
+                      </label>
                       <div className="row g-2 align-items-center">
                         {/* Input Group Column */}
                         <div className="col-12 col-md-5">
@@ -417,7 +457,9 @@ const CupCake = () => {
                             <button
                               className="btn btn-sm btn-outline-secondary"
                               type="button"
-                              onClick={() => setQuantity((prev) => Math.max(prev - 1, 1))}
+                              onClick={() =>
+                                setQuantity((prev) => Math.max(prev - 1, 1))
+                              }
                             >
                               -
                             </button>
@@ -425,7 +467,9 @@ const CupCake = () => {
                               type="number"
                               className="form-control text-center"
                               value={quantity}
-                              onChange={(e) => setQuantity(Number(e.target.value))}
+                              onChange={(e) =>
+                                setQuantity(Number(e.target.value))
+                              }
                               min="1"
                             />
                             <button
@@ -458,7 +502,7 @@ const CupCake = () => {
               <div className="modal-footer d-flex flex-column align-items-center">
                 <div className="d-flex flex-row justify-content-center gap-4 align-items-center">
                   {/* Share Text */}
-                  <span className='share-text'>Share:</span>
+                  <span className="share-text">Share:</span>
 
                   {/* Facebook */}
                   <a
@@ -466,7 +510,7 @@ const CupCake = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-center d-flex align-items-center"
-                    style={{ color: '#1877F2', textDecoration: 'none' }}
+                    style={{ color: "#1877F2", textDecoration: "none" }}
                   >
                     <i className="fab fa-facebook fa-1x"></i>
                   </a>
@@ -476,7 +520,7 @@ const CupCake = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-center d-flex align-items-center"
-                    style={{ color: '#1DA1F2', textDecoration: 'none' }}
+                    style={{ color: "#1DA1F2", textDecoration: "none" }}
                   >
                     <i className="fab fa-twitter fa-1x"></i>
                   </a>
@@ -486,7 +530,7 @@ const CupCake = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-center d-flex align-items-center"
-                    style={{ color: '#E60023', textDecoration: 'none' }}
+                    style={{ color: "#E60023", textDecoration: "none" }}
                   >
                     <i className="fab fa-pinterest fa-1x"></i>
                   </a>
@@ -496,22 +540,16 @@ const CupCake = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-center d-flex align-items-center"
-                    style={{ color: '#25D366', textDecoration: 'none' }}
+                    style={{ color: "#25D366", textDecoration: "none" }}
                   >
                     <i className="fab fa-whatsapp fa-1x"></i>
                   </a>
                 </div>
               </div>
-
-
             </div>
           </div>
         </div>
       )}
-
-
-
-
     </div>
   );
 };

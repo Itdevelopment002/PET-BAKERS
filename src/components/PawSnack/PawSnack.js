@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./PawSnack.css";
 import { FaCartPlus, FaEye } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const PawSnack = () => {
   const [selectedPawSnack, setSelectedPawSnack] = useState(null);
@@ -8,6 +9,7 @@ const PawSnack = () => {
   const [quantity, setQuantity] = useState(1);
   const [selectedFlavour, setSelectedFlavour] = useState(""); // Flavour state
   const [selectedSize, setSelectedSize] = useState(null);
+  const navigate = useNavigate();
   const modalRef = useRef(null);
   useEffect(() => {
     const handleOutsideClick = (event) => {
@@ -138,6 +140,9 @@ const PawSnack = () => {
     }));
   };
 
+  const handleCardClick = (id) => {
+    navigate(`/pawsnack/${id}`);
+  };
 
   const handleAddToCart = (pawsnack) => {
     alert(`${pawsnack.name} added to cart!`);
@@ -215,7 +220,11 @@ const PawSnack = () => {
 
           return (
             <div key={pawsnack.id} className="col-md-3 col-sm-6">
-              <div className="card product-card">
+              <div
+                className="card product-card"
+                onClick={() => handleCardClick(pawsnack.id)}
+                style={{ cursor: "pointer" }}
+              >
                 <div className="position-relative">
                   <img
                     src={pawsnack.image}
@@ -232,14 +241,20 @@ const PawSnack = () => {
                     <div className="tooltip-container">
                       <FaCartPlus
                         className="icon cart-icon"
-                        onClick={() => handleAddToCart(pawsnack)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleAddToCart(pawsnack)
+                        }}
                       />
                       <span className="tooltip-text">Add to Cart</span>
                     </div>
                     <div className="tooltip-container">
                       <FaEye
                         className="icon view-icon"
-                        onClick={() => handleView(pawsnack)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleView(pawsnack)
+                        }}
                       />
                       <span className="tooltip-text">View Items</span>
                     </div>
