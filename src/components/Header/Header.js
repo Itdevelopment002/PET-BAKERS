@@ -119,7 +119,7 @@ const Header = () => {
                         <FaHamburger />
                     </button>
 
-                    <h1 className="header__heading mx-3">
+                    <h1 className="header__heading mx-2">
                         <a href="/" className="header__heading-link link">
                             Furry Frosting
                         </a>
