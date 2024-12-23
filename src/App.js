@@ -1,9 +1,9 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import About from "./components/About/About"
+import About from "./components/About/About";
 import Contact from './components/Contact/Contact';
 import Faq from './components/Faq/Faq';
 import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy';
@@ -20,14 +20,19 @@ import MiniCakeDetails from './components/MiniCakeDetails/MiniCakeDetails';
 import Cart from './components/Cart/Cart';
 
 function App() {
+  const location = useLocation(); 
+
+  const hideHeaderFooterRoutes = ['/login'];
+
+  const shouldHideHeaderFooter = hideHeaderFooterRoutes.includes(location.pathname);
+
   return (
-    <Router>
-      {/* <Login /> */}
-      <Header />
+    <>
+      {!shouldHideHeaderFooter && <Header />}
       <main style={{ minHeight: '80vh' }}>
         <Routes>
-          <Route path="/" element={<Navigate to="/home" />}/>
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/about-us" element={<About />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/contact" element={<Contact />} />
@@ -43,9 +48,17 @@ function App() {
           <Route path="/paw-snacks" element={<PawSnack />} />
         </Routes>
       </main>
-      <Footer />
+      {!shouldHideHeaderFooter && <Footer />}
+    </>
+  );
+}
+
+function AppWrapper() {
+  return (
+    <Router>
+      <App />
     </Router>
   );
 }
 
-export default App;
+export default AppWrapper;

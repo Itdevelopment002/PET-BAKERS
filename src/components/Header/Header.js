@@ -208,7 +208,7 @@ const Header = () => {
                             </button>
                         </div>
                         <a
-                            href="https://shopify.com/87244898615/account?locale=en&region_country=IN"
+                            href="/login"
                             className="header__icon"
                             style={{ background: "none", textDecoration: "none" }}
                         >
