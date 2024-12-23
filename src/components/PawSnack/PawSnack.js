@@ -27,7 +27,7 @@ const PawSnack = () => {
     };
   }, [showModal]);
 
-  const pawSnacks = [
+  const [pawSnacks, setpawSnacks] = useState([
     {
       id: 1,
       name: "Personalized Doggo Face cookies",
@@ -35,6 +35,8 @@ const PawSnack = () => {
       originalPrice: 149,
       type: "Chocolate",
       rating: 4.5,
+      available: true,
+      size: "Small",
       image:
         "https://thefurrybaker.com/cdn/shop/files/Personalized_Face_Cookies.jpg?v=1725600910&width=360",
       thumbnailImages: [
@@ -50,6 +52,8 @@ const PawSnack = () => {
       originalPrice: 99,
       type: "Strawberry",
       rating: 3.5,
+      available: false,
+      size: "Medium",
       image:
         "https://thefurrybaker.com/cdn/shop/files/Bone_Shape_Cookie.jpg?v=1725600755&width=360",
       thumbnailImages: [
@@ -65,6 +69,8 @@ const PawSnack = () => {
       originalPrice: 320,
       type: "Vanilla",
       rating: 5,
+      available: true,
+      size: "Large",
       image:
         "https://thefurrybaker.com/cdn/shop/files/Pizza_For_Dogs.jpg?v=1725600946&width=360",
       thumbnailImages: [
@@ -80,6 +86,8 @@ const PawSnack = () => {
       originalPrice: 149,
       type: "Caramel",
       rating: 3.7,
+      available: true,
+      size: "Large",
       image:
         "https://thefurrybaker.com/cdn/shop/files/Bark_Brezer.jpg?v=1725600710&width=360",
       thumbnailImages: [
@@ -95,6 +103,8 @@ const PawSnack = () => {
       originalPrice: 149,
       type: "Peanut Butter",
       rating: 4,
+      available: true,
+      size: "small",
       image:
         "https://thefurrybaker.com/cdn/shop/files/Cat_Face_Cookies.jpg?v=1725600796&width=360",
       thumbnailImages: [
@@ -110,6 +120,8 @@ const PawSnack = () => {
       originalPrice: 849,
       type: "Banana",
       rating: 2.9,
+      available: false,
+      size: "Medium",
       image:
         "https://thefurrybaker.com/cdn/shop/files/Woof_Donuts.jpg?v=1725600867&width=360",
       thumbnailImages: [
@@ -118,7 +130,7 @@ const PawSnack = () => {
         'https://thefurrybaker.com/cdn/shop/files/cupcake.jpg?v=1715335098&width=360',
       ],
     },
-  ];
+  ]);
 
   const handleView = (pawsnack) => {
     const price =
@@ -189,104 +201,293 @@ const PawSnack = () => {
     return stars;
   };
 
+  const [filteredCakes, setFilteredCakes] = useState(pawSnacks);
+  const [filters, setFilters] = useState({
+    flavor: "",
+    priceRange: [0, 1000],
+    rating: 0,
+    availability: "",
+    size: "",
+  });
+
+
+
+  const handleFilterChange = (key, value) => {
+    setFilters((prevFilters) => ({ ...prevFilters, [key]: value }));
+  };
+
+    useEffect(() => {
+      let cakes = pawSnacks;
+  
+      // Filter by flavor
+      if (filters.flavor) cakes = cakes.filter((cake) => cake.type === filters.flavor);
+  
+      // Filter by price range
+      if (filters.priceRange)
+        cakes = cakes.filter(
+          (cake) => cake.originalPrice >= filters.priceRange[0] && cake.originalPrice <= filters.priceRange[1]
+        );
+  
+      // Filter by rating
+      if (filters.rating) cakes = cakes.filter((cake) => cake.rating >= filters.rating);
+  
+      // Filter by availability
+      if (filters.availability)
+        cakes = cakes.filter((cake) => cake.available === (filters.availability === "Available"));
+  
+      // Filter by size
+      if (filters.size) cakes = cakes.filter((cake) => cake.size === filters.size);
+  
+      // Filter by discount (percentage off)
+      if (filters.discountRange) {
+      // Check if the discount range is set to show all offers (0-100%)
+      if (filters.discountRange[0] === 0 && filters.discountRange[1] === 100) {
+        // Allow all cakes, including those with 0% off
+        cakes = cakes.filter((cake) => cake.off >= 0);
+      } else {
+        // Filter by specific discount range
+        cakes = cakes.filter(
+          (cake) => cake.off >= filters.discountRange[0] && cake.off <= filters.discountRange[1]
+        );
+      }
+    }
+  
+      // Set the filtered cakes
+      setFilteredCakes(cakes);
+    }, [filters, pawSnacks]);
+
   return (
     <div className="container minicake-shop-page mt-5">
-      <div className="shop-title-container">
-        <div className="line-wrapper">
-          <div className="line full-width"></div>
-          <div className="line small-width"></div>
-        </div>
-        <h1 className="shop-title mb-4">Treats</h1>
-        <div className="line-wrapper">
-          <div className="line full-width"></div>
-          <div className="line small-width"></div>
-        </div>
-      </div>
-      <div className="results-info mb-3">
-        <p>Showing all {pawSnacks.length} results</p>
-        <div className="dropdown">
-          <button className="btn btn-light dropdown-toggle" type="button">
-            Default sorting
-          </button>
-        </div>
-      </div>
-      <div className="row g-4 mb-5">
-        {pawSnacks.map((pawsnack) => {
-          const price =
-            pawsnack.off > 0
-              ? pawsnack.originalPrice -
-              (pawsnack.originalPrice * pawsnack.off) / 100
-              : pawsnack.originalPrice;
+      <div className="row">
+        {/* Filter Sidebar */}
+        <div className="col-md-3 col-12 filter-section">
+          <h4>Filters</h4>
+          <div className="filter-group">
+            <label>Flavor</label>
+            <select
+              className="form-select"
+              onChange={(e) => handleFilterChange("flavor", e.target.value)}
+            >
+              <option value="">All</option>
+              <option value="Chocolate">Chocolate</option>
+              <option value="Strawberry">Strawberry</option>
+              <option value="Vanilla">Vanilla</option>
+            </select>
+          </div>
+          
+          <div className="filter-group">
+            <label>Price Range</label>
+            <input
+              type="range"
+              className="form-range"
+              min="0"
+              max="1000"
+              step="50"
+              value={filters.priceRange[1]}
+              onChange={(e) => handleFilterChange("priceRange", [0, parseInt(e.target.value)])}
+            />
+            <p>Up to ₹{filters.priceRange[1]}</p>
+          </div>
 
-          return (
-            <div key={pawsnack.id} className="col-md-3 col-sm-6">
-              <div
-                className="card product-card"
-                onClick={() => handleCardClick(pawsnack.id)}
-                style={{ cursor: "pointer" }}
-              >
-                <div className="position-relative">
-                  <img
-                    src={pawsnack.image}
-                    alt={pawsnack.name}
-                    className="card-img-top product-image"
-                  />
-                  {pawsnack.off > 0 && (
-                    <>
-                      <span className="badge badge-sale">Sale!</span>
-                      <span className="discount">{pawsnack.off}% Off</span>{" "}
-                    </>
-                  )}
-                  <div className="action-icons">
-                    <div className="tooltip-container">
-                      <FaCartPlus
-                        className="icon cart-icon"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleAddToCart(pawsnack)
-                        }}
-                      />
-                      <span className="tooltip-text">Add to Cart</span>
-                    </div>
-                    <div className="tooltip-container">
-                      <FaEye
-                        className="icon view-icon"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleView(pawsnack)
-                        }}
-                      />
-                      <span className="tooltip-text">View Items</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="card-body text-center">
-                  <p className="product-type mb-1">{pawsnack.type} Flavor</p>
-                  <h5 className="product-name">{pawsnack.name}</h5>
-                  <div className="product-price">
-                    {pawsnack.off > 0 ? (
-                      <>
-                        <span className="original-price text-decoration-line-through">
-                          ₹{Math.round(pawsnack.originalPrice)}.00
-                        </span>
-                        <span className="sale-price ms-2">
-                          ₹{Math.round(price)}.00
-                        </span>
-                      </>
-                    ) : (
-                      <span className="sale-price ms-2">
-                        ₹{Math.round(price)}.00
-                      </span>
-                    )}
-                  </div>
-                  <div className="rating mt-2">
-                    {renderStars(pawsnack.rating)}
-                  </div>
-                </div>
-              </div>
+          <div className="filter-group rating-filter">
+            <label>Rating</label>
+            <div className="star-rating">
+              {[1, 2, 3, 4, 5].map((star) => (
+                <span
+                  key={star}
+                  className={`star ${filters.rating >= star ? "active" : ""}`}
+                  onClick={() => handleFilterChange("rating", star)}
+                >
+                  ★
+                </span>
+              ))}
             </div>
-          );
-        })}
+            <p className="selected-rating">
+              {filters.rating ? `${filters.rating} & above` : "All ratings"}
+            </p>
+          </div>
+
+
+
+          <div className="filter-group">
+            <label>Offers</label>
+            <div className="offer-options">
+              <label className="custom-radio">
+                <input
+                  type="radio"
+                  name="offer"
+                  value="0"
+                  onChange={(e) => handleFilterChange("discountRange", [0, 100])}  // No filter, all offers
+                />
+                <span>All Offers</span>
+              </label>
+              <label className="custom-radio">
+                <input
+                  type="radio"
+                  name="offer"
+                  value="20"
+                  onChange={(e) => handleFilterChange("discountRange", [1, 20])}  // Up to 20% Off
+                />
+                <span>Upto 20% Off</span>
+              </label>
+              <label className="custom-radio">
+                <input
+                  type="radio"
+                  name="offer"
+                  value="40"
+                  onChange={(e) => handleFilterChange("discountRange", [1, 40])}  // Up to 40% Off
+                />
+                <span>Upto 40% Off</span>
+              </label>
+              <label className="custom-radio">
+                <input
+                  type="radio"
+                  name="offer"
+                  value="60"
+                  onChange={(e) => handleFilterChange("discountRange", [1, 60])}  // Up to 60% Off
+                />
+                <span>Upto 60% Off</span>
+              </label>
+            </div>
+          </div>
+
+
+
+
+          <div className="filter-group">
+            <label>Size</label>
+            <div className="size-options">
+              <label className="custom-checkbox d-flex align-items-center">
+                <input
+                  type="checkbox"
+                  value="Small"
+                  onChange={(e) => handleFilterChange("size", e.target.value, e.target.checked)}
+                />
+                <span>Small</span>
+              </label>
+
+              <label className="custom-checkbox d-flex align-items-center">
+                <input
+                  type="checkbox"
+                  value="Medium"
+                  onChange={(e) => handleFilterChange("size", e.target.value, e.target.checked)}
+                />
+                <span>Medium</span>
+              </label>
+              <label className="custom-checkbox d-flex align-items-center">
+                <input
+                  type="checkbox"
+                  value="Large"
+                  onChange={(e) => handleFilterChange("size", e.target.value, e.target.checked)}
+                />
+                <span>Large</span>
+              </label>
+            </div>
+          </div>
+
+
+        </div>
+
+        <div className="col-md-9 col-12">
+
+          <div className="shop-title-container mb-2">
+            <div className="line-wrapper">
+              <div className="line full-width"></div>
+              <div className="line small-width"></div>
+            </div>
+            <h1 className="shop-title mb-4">Treats</h1>
+            <div className="line-wrapper">
+              <div className="line full-width"></div>
+              <div className="line small-width"></div>
+            </div>
+          </div>
+          <div className="results-info mb-3">
+            <p>Showing all {pawSnacks.length} results</p>
+            <div className="dropdown">
+              <button className="btn btn-light dropdown-toggle" type="button">
+                Default sorting
+              </button>
+            </div>
+          </div>
+          <div className="row">
+            {filteredCakes.map((pawsnack) => {
+              const price =
+                pawsnack.off > 0
+                  ? pawsnack.originalPrice -
+                  (pawsnack.originalPrice * pawsnack.off) / 100
+                  : pawsnack.originalPrice;
+
+              return (
+                <div key={pawsnack.id} className="col-lg-4 col-md-6 col-sm-6 col-12 mb-4">
+                  <div
+                    className="card product-card"
+                    onClick={() => handleCardClick(pawsnack.id)}
+                    style={{ cursor: "pointer" }}
+                  >
+                    <div className="position-relative">
+                      <img
+                        src={pawsnack.image}
+                        alt={pawsnack.name}
+                        className="card-img-top product-image"
+                      />
+                      {pawsnack.off > 0 && (
+                        <>
+                          <span className="badge badge-sale">Sale!</span>
+                          <span className="discount">{pawsnack.off}% Off</span>{" "}
+                        </>
+                      )}
+                      <div className="action-icons">
+                        <div className="tooltip-container">
+                          <FaCartPlus
+                            className="icon cart-icon"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleAddToCart(pawsnack)
+                            }}
+                          />
+                          <span className="tooltip-text">Add to Cart</span>
+                        </div>
+                        <div className="tooltip-container">
+                          <FaEye
+                            className="icon view-icon"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleView(pawsnack)
+                            }}
+                          />
+                          <span className="tooltip-text">View Items</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="card-body text-center">
+                      <p className="product-type mb-1">{pawsnack.type} Flavor</p>
+                      <h5 className="product-name">{pawsnack.name}</h5>
+                      <div className="product-price">
+                        {pawsnack.off > 0 ? (
+                          <>
+                            <span className="original-price text-decoration-line-through">
+                              ₹{Math.round(pawsnack.originalPrice)}.00
+                            </span>
+                            <span className="sale-price ms-2">
+                              ₹{Math.round(price)}.00
+                            </span>
+                          </>
+                        ) : (
+                          <span className="sale-price ms-2">
+                            ₹{Math.round(price)}.00
+                          </span>
+                        )}
+                      </div>
+                      <div className="rating mt-2">
+                        {renderStars(pawsnack.rating)}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
 
       {selectedPawSnack && showModal && (
