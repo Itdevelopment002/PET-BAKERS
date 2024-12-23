@@ -321,7 +321,7 @@ const CupCake = () => {
 
                   {/* Right Section: Details */}
                   <div className="col-md-6 py-4 px-3">
-                    <h4 className="fw-bold mt-3 custom-modal-site fs-6 text-muted">Pet Bakers</h4>
+                    <h4 className="fw-bold mt-3 custom-modal-site fs-6 text-muted">Furry Frostings</h4>
                     <h4 className="fw-bold mt-1 custom-modal-header">{selectedCupcake.name}</h4>
                     {/* <h5 className="text-danger fw-bold">₹{selectedCupcake.price.toFixed(2)}</h5> */}
                     <div className="product-price mb-2">

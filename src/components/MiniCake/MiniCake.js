@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./MiniCake.css";
 import { FaCartPlus, FaEye } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const MiniCake = () => {
   const [selectedminicake, setSelectedminicake] = useState(null);
@@ -8,6 +9,7 @@ const MiniCake = () => {
   const [quantity, setQuantity] = useState(1);
   const [selectedFlavour, setSelectedFlavour] = useState(""); // Flavour state
   const [selectedSize, setSelectedSize] = useState(null);
+  const navigate = useNavigate();
 
   const modalRef = useRef(null);
   useEffect(() => {
@@ -138,6 +140,10 @@ const MiniCake = () => {
     }));
   };
 
+  const handleCardClick = (id) => {
+    navigate(`/minicake/${id}`);
+  };
+
   const handleAddToCart = (minicake) => {
     alert(`${minicake.name} added to cart!`);
   };
@@ -214,7 +220,11 @@ const MiniCake = () => {
 
           return (
             <div key={minicake.id} className="col-md-3 col-sm-6">
-              <div className="card product-card">
+              <div
+              className="card product-card"
+              onClick={() => handleCardClick(minicake.id)}
+              style={{ cursor: "pointer" }}
+            >
                 <div className="position-relative">
                   <img
                     src={minicake.image}
@@ -231,14 +241,20 @@ const MiniCake = () => {
                     <div className="tooltip-container">
                       <FaCartPlus
                         className="icon cart-icon"
-                        onClick={() => handleAddToCart(minicake)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleAddToCart(minicake)
+                        }}
                       />
                       <span className="tooltip-text">Add to Cart</span>
                     </div>
                     <div className="tooltip-container">
                       <FaEye
                         className="icon view-icon"
-                        onClick={() => handleView(minicake)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleView(minicake)
+                        }}
                       />
                       <span className="tooltip-text">View Items</span>
                     </div>
@@ -325,7 +341,7 @@ const MiniCake = () => {
 
                   {/* Right Section: Details */}
                   <div className="col-md-6 py-4 px-3">
-                    <h4 className="fw-bold mt-3 custom-modal-site fs-6 text-muted">Pet Bakers</h4>
+                    <h4 className="fw-bold mt-3 custom-modal-site fs-6 text-muted">Furry Frostings</h4>
                     <h4 className="fw-bold mt-1 custom-modal-header">{selectedminicake.name}</h4>
                     {/* <h5 className="text-danger fw-bold">₹{selectedminicake.price.toFixed(2)}</h5> */}
                     <div className="product-price mb-2">

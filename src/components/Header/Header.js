@@ -121,7 +121,7 @@ const Header = () => {
 
                     <h1 className="header__heading mx-3">
                         <a href="/" className="header__heading-link link">
-                            Pet Baker
+                            Furry Frosting
                         </a>
                     </h1>
 

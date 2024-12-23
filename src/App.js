@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import About from "./components/About/About"
 import Contact from './components/Contact/Contact';
 import Faq from './components/Faq/Faq';
 import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy';
@@ -15,6 +16,7 @@ import PawSnack from './components/PawSnack/PawSnack';
 import RefundPolicy from './components/RefundPoilcy/RefundPolicy';
 import Tac from './components/Tac/Tac';
 import ShippingPolicy from './components/ShippingPolicy/ShippingPolicy';
+import MiniCakeDetails from './components/MiniCakeDetails/MiniCakeDetails';
 
 function App() {
   return (
@@ -25,6 +27,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/pages/about-us" element={<About />} />
           <Route path="/pages/contact" element={<Contact />} />
           <Route path="/pages/faqs" element={<Faq />} />
           <Route path="/policies/privacy-policy" element={<PrivacyPolicy />} />
@@ -33,6 +36,7 @@ function App() {
           <Route path="/policies/shipping-policy" element={<ShippingPolicy />} />
           <Route path="/collections/cup-cakes" element={<CupCake />} />
           <Route path="/collections/mini-cakes" element={<MiniCake />} />
+          <Route path="/minicake/:id" element={<MiniCakeDetails />} />
           <Route path="/collections/cakes" element={<Cake />} />
           <Route path="/collections/paw-snacks" element={<PawSnack />} />
         </Routes>

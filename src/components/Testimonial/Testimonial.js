@@ -23,7 +23,7 @@ const TestimonialSection = () => {
             </div>
             <p className="text-muted">
               My golden retriever, Max, absolutely loves the peanut butter biscuits! I feel great
-              knowing they are healthy and made with natural ingredients. Thank you, Pet Bakers!
+              knowing they are healthy and made with natural ingredients. Thank you, Furry Frostings!
             </p>
             <div className="d-flex justify-content-center align-items-center">
               <img
@@ -49,7 +49,7 @@ const TestimonialSection = () => {
             </div>
             <p className="text-muted">
               Our pug, Bella, adores the pupcakes! She gets so excited every time we bring them out.
-              Pet Bakers has made every special occasion even more memorable.
+              Furry Frostings has made every special occasion even more memorable.
             </p>
             <div className="d-flex justify-content-center align-items-center">
               <img
@@ -75,7 +75,7 @@ const TestimonialSection = () => {
             </div>
             <p className="text-muted">
               I ordered the birthday cake for my Labrador, Buddy, and it was perfect! The cake was
-              beautiful, tasty, and pet-friendly. Highly recommend Pet Bakers for all pet treats!
+              beautiful, tasty, and pet-friendly. Highly recommend Furry Frostings for all pet treats!
             </p>
             <div className="d-flex justify-content-center align-items-center">
               <img

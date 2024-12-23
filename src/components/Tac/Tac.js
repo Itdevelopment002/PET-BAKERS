@@ -10,7 +10,7 @@ const Tac = () => {
           The Terms of Purpose (hereinafter alluded to as "Agreements" or "T&C"
           or "Terms" or "Understanding") alongside some other Strategy or
           Proclamation or Data that might be put on this site (hereinafter
-          alluded to as "The Furry Baker" or,"TFB" or, "Site" or "We" or "Us"),
+          alluded to as "The Furry Frostings" or,"TFF" or, "Site" or "We" or "Us"),
           as changed or corrected occasionally, are an official agreement
           between the Organization and You (hereinafter alluded to as "You" or
           "End Client" or "Your" or "Purchaser" or "Client").

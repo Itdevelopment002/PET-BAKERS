@@ -49,7 +49,7 @@ const Login = () => {
             alt="Logo or Dog Animation"
             className="logo-animation"
           />
-          <h1>Pet Baker</h1>
+          <h1>Furry Frostings</h1>
           <h4>LOGIN</h4>
           <p>Enter your email and we’ll send you a login code</p>
           <form>
