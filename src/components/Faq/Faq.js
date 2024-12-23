@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Faq.css";
 import { LuCake } from "react-icons/lu";
 
@@ -17,45 +17,38 @@ const Faq = () => {
     },
     {
       question: "How long will the cake stay fresh?",
-      answer:
-        `For the best taste, enjoy the cake within 2-3 days of delivery.
+      answer: `For the best taste, enjoy the cake within 2-3 days of delivery.
         Store it in the fridge, and if it becomes too firm, a quick 15-20 second microwave session will restore its moisture and softness.
         Keep it away from heat, humidity, and direct sunlight.
         Always refrigerate our products.`,
     },
     {
       question: "Can I eat my pet's cake?",
-      answer:
-        `Absolutely! Since we use human-grade ingredients, you're welcome to take a bite—just as long as your pet is willing to share!
+      answer: `Absolutely! Since we use human-grade ingredients, you're welcome to take a bite—just as long as your pet is willing to share!
         Keep in mind, the cake is sugar-free, so the flavors and textures might not be as appealing to you, but rest assured, your pet will love it!`,
     },
     {
       question: "Can I choose the cake/design of the cake?",
-      answer:
-        `When you pick a pet cake from our collections, you’ll receive exactly what you see.
+      answer: `When you pick a pet cake from our collections, you’ll receive exactly what you see.
         However, if you’d like something customized, feel free to reach out to us on WhatsApp at 8447774678 with your request.`,
     },
     {
       question: "Can we customize the ingredients for food allergies?",
-      answer:
-        `If your pet has any allergies, please inform us, and we’ll adjust our recipes to meet their dietary needs.`,
+      answer: `If your pet has any allergies, please inform us, and we’ll adjust our recipes to meet their dietary needs.`,
     },
     {
       question: "How much should I feed my pet?",
-      answer:
-        `Trust your own judgment, as you know your pet best.
+      answer: `Trust your own judgment, as you know your pet best.
         We suggest adjusting your pet’s regular meal portions when serving them our cakes. We also recommend dividing the cake into 2-3 servings to ensure they enjoy it without overindulging.`,
     },
     {
       question: "Do you deliver? Is there an additional cost?",
-      answer:
-        `We offer delivery throughout Delhi NCR.
+      answer: `We offer delivery throughout Delhi NCR.
         There is a delivery fee, which will be included in the total amount at checkout.`,
     },
     {
       question: "How do I make a payment?",
-      answer:
-        `We accept Google Pay, Paytm, UPI, and bank transfers. All orders must be prepaid to confirm the purchase.`,
+      answer: `We accept Google Pay, Paytm, UPI, and bank transfers. All orders must be prepaid to confirm the purchase.`,
     },
   ];
 

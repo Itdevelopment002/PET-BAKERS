@@ -80,12 +80,12 @@ const Home = () => {
 
                     {/* Text Section */}
                     <div className="col-md-6 mt-4 mt-md-0 text-md-start text-center">
-                        <p className="text-uppercase fw-bold mb-2 about-text">About Pet Bakers</p>
+                        <p className="text-uppercase fw-bold mb-2 about-text">About Furry Frostings</p>
                         <h2 className="display-5 fw-bold text-dark mb-3 about-heading">
                             Baking Delicious Treats for Your Furry Friends
                         </h2>
                         <p className="text-muted mb-4">
-                            Welcome to Pet Bakers, where passion for pets meets creativity in the kitchen.
+                            Welcome to Furry Frostings, where passion for pets meets creativity in the kitchen.
                             We specialize in creating healthy, tasty, and beautifully crafted treats that bring joy to your furry companions.
                             Our mission is to make every special moment with your pets extra memorable and delightful.
                         </p>

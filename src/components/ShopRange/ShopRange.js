@@ -1,12 +1,14 @@
-import React from 'react';
-import './ShopRange.css';
+import React from "react";
+import "./ShopRange.css";
+import { Link } from "react-router-dom";
 
 const ShopRange = () => {
   return (
-    
     <div className="container custom-container parent-class my-5">
       {/* Title */}
-      <h1 className="text-center Range-heading mb-4">Shop from our Yummy Range</h1>
+      <h1 className="text-center Range-heading mb-4">
+        Shop from our Yummy Range
+      </h1>
 
       {/* Cards Section */}
       <div className="row justify-content-center g-4 custom-section mt-4">
@@ -19,7 +21,12 @@ const ShopRange = () => {
               alt="Cup Cakes"
             />
             <div className="card-body-bottom text-center">
-              <h6 className="">Cup Cakes &rarr;</h6>
+              <Link
+                to="/collections/cup-cakes"
+                className="text-decoration-none"
+              >
+                <h6 className="">Cup Cakes &rarr;</h6>
+              </Link>
             </div>
           </div>
         </div>
@@ -33,7 +40,9 @@ const ShopRange = () => {
               alt="Cakes"
             />
             <div className="card-body-bottom text-center">
-              <h6 className="">Cakes &rarr;</h6>
+              <Link to="/collections/cakes" className="text-decoration-none">
+                <h6 className="">Cakes &rarr;</h6>
+              </Link>
             </div>
           </div>
         </div>
@@ -47,7 +56,12 @@ const ShopRange = () => {
               alt="Mini Cakes"
             />
             <div className="card-body-bottom text-center">
-              <h6 className="">Mini Cakes &rarr;</h6>
+              <Link
+                to="/collections/mini-cakes"
+                className="text-decoration-none"
+              >
+                <h6 className="">Mini Cakes &rarr;</h6>
+              </Link>
             </div>
           </div>
         </div>
@@ -61,7 +75,9 @@ const ShopRange = () => {
               alt="Cat Cakes"
             />
             <div className="card-body-bottom text-center">
-              <h6 className="">Cat Cakes &rarr;</h6>
+              <Link to="#." className="text-decoration-none">
+                <h6 className="">Cat Cakes &rarr;</h6>
+              </Link>
             </div>
           </div>
         </div>
@@ -75,7 +91,12 @@ const ShopRange = () => {
               alt="Treats"
             />
             <div className="card-body-bottom text-center">
-              <h6 className="">Treats &rarr;</h6>
+              <Link
+                to="/collections/paw-snacks"
+                className="text-decoration-none"
+              >
+                <h6 className="">Treats &rarr;</h6>
+              </Link>
             </div>
           </div>
         </div>
