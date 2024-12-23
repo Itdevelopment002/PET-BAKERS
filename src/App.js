@@ -17,6 +17,7 @@ import RefundPolicy from './components/RefundPoilcy/RefundPolicy';
 import Tac from './components/Tac/Tac';
 import ShippingPolicy from './components/ShippingPolicy/ShippingPolicy';
 import MiniCakeDetails from './components/MiniCakeDetails/MiniCakeDetails';
+import Cart from './components/Cart/Cart';
 
 function App() {
   return (
@@ -25,9 +26,10 @@ function App() {
       <Header />
       <main style={{ minHeight: '80vh' }}>
         <Routes>
-          <Route path="/" element={<Navigate to="/home" />} />
+          <Route path="/" element={<Navigate to="/home" />}exact />
           <Route path="/home" element={<Home />} />
           <Route path="/pages/about-us" element={<About />} />
+          <Route path="/pages/cart" element={<Cart />} />
           <Route path="/pages/contact" element={<Contact />} />
           <Route path="/pages/faqs" element={<Faq />} />
           <Route path="/policies/privacy-policy" element={<PrivacyPolicy />} />

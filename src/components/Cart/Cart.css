@@ -1,0 +1,80 @@
+.quantity-control button {
+  width: 35px;
+  height: 35px;
+}
+
+.quantity-control input {
+  width: 50px;
+  height: 35px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.table th,
+.table td {
+    padding: 10px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.table th {
+    background-color: #f8f9fa;
+}
+
+.table img {
+    max-width: 100%;
+    height: auto;
+}
+
+.table td {
+    border-bottom: 1px solid #ddd;
+}
+
+/* Quantity control button styling */
+.quantity-control button {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Product info styling */
+.table .row {
+    display: flex;
+    align-items: center;
+}
+
+.table .col-md-3,
+.table .col-md-9 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.table .col-md-3 img {
+    max-width: 100%;
+    height: auto;
+}
+
+.table .col-md-9 {
+    padding-left: 15px;
+}
+
+/* Action button (trash icon) styling */
+.table .text-center button {
+    font-size: 18px;
+}
+
+/* Styling for order total section */
+.text-muted a {
+    text-decoration: none;
+    color: #6c757d;
+}
+
+.text-muted a:hover {
+    color: #0056b3;
+}

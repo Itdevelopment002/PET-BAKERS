@@ -215,7 +215,7 @@ const Header = () => {
                             <FaUser />
                         </a>
                         <a
-                            href="/cart"
+                            href="pages/cart"
                             className="header__icon"
                             id="cart-icon-bubble"
                             style={{ background: "none", textDecoration: "none" }}
