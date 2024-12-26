@@ -1,0 +1,295 @@
+.cupcake-details {
+    margin-top: 30px;
+    background-color: #fff;
+    padding: 20px;
+  }
+  
+  .thumbnail-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between thumbnails */
+  }
+  
+  .thumbnail-gallery img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+  }
+  
+  .thumbnail-gallery img.active {
+    border: 2px solid #f00; /* Highlight active thumbnail */
+  }
+  
+  .thumbnail-gallery img:hover {
+    border: 2px solid #007bff; /* Highlight on hover */
+  }
+
+  .main-image {
+    width: 400px; /* Set a fixed width */
+    height: 400px; /* Set a fixed height */
+    margin: 0 auto; /* Center the image horizontally */
+    overflow: hidden; /* Ensure the image doesn't overflow */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd; /* Optional: Add a border for styling */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    background-color: #f9f9f9; /* Optional: Add a background color */
+  }
+  
+  .main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image fills the container without distortion */
+  }
+  
+  
+  .sale-badge {
+    background-color: #ff5722;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 14px;
+  }
+  
+  .product-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 10px;
+    font-family: var(--font-heading-family);
+
+  }
+  
+.product-category {
+    color: #777;
+    font-size: 14px;
+    font-family: var(--font-heading-family);
+  }
+
+  .price-section {
+    margin: 15px 0;
+  }
+  
+  .original-price-details {
+    text-decoration: line-through;
+    color: #aaa;
+    font-size: 19px;
+    font-weight: bold;
+  }
+  
+  .discounted-price {
+    color: #9f5646;
+    font-size: 21px;
+    font-weight: bold;
+    margin-left: 10px;
+  }
+  
+  .free-shipping {
+    font-size: 14px;
+    color: #136c6c;
+    margin-left: 5px;
+    font-weight: 500;
+  }
+  
+  .product-description {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+    margin: 20px 0;
+    font-family: 'Heebo', sans-serif;
+    opacity:0.7;
+  }
+  
+  .quantity-wrapper {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+  }
+  
+  .quantity-btn {
+    background-color: #ddd;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  .quantity-input {
+    width: 50px;
+    text-align: center;
+    margin: 0 5px;
+  }
+  
+  .add-to-cart {
+    background-color: #ff5722;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .guarantee-list {
+    margin: 20px 0;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .guarantee-list li {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .payment-icons {
+    margin-top: 20px;
+  }
+  
+  .payment-icons img {
+    width: 50px;
+    margin-right: 10px;
+  }
+  
+  .guarantee-list {
+    list-style: none;
+    padding: 0;
+    color: #5d4c4c; /* Adjust this color if necessary */
+    font-family: Arial, sans-serif; /* Match the font */
+  }
+  
+  .guarantee-list li {
+    margin: 5px 0;
+    font-size: 14px; /* Adjust size based on your design */
+  }
+  
+  .guarantee-list strong {
+    display: block;
+    font-size: 16px; /* Slightly larger for emphasis */
+    margin-bottom: 5px;
+  }
+  
+
+  /* related product */
+  .related-products-title{
+    font-family: var(--font-heading-family);
+    color:#0f5c5c;
+    font-weight: 500;
+
+  }
+
+  .description {
+    color: #333 !important;
+    font-weight: 500;
+  }
+  .reviews{
+    color: #333 !important;
+    font-weight: 500;
+  }
+  .nav-tabs{
+    border-color: #1faeae !important;
+  }
+  
+  .nav-tabs .nav-link.active {
+    border-color: #136c6c #136c6c transparent;
+    border-width: 2px;
+    font-weight: bold;
+  }
+  
+  .description-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+    font-family: 'Heebo', sans-serif;
+    opacity:0.8;
+  }
+  .review-text{
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: #555;
+    font-family: 'Heebo', sans-serif;
+    opacity:0.8;
+  }
+  
+  .tab-content {
+    padding-top: 1rem;
+  }
+
+  /* review form */
+  .review-form .star {
+    cursor: pointer;
+    font-size: 1.5rem; /* Adjust the size as needed */
+    color: #e4e5e9; /* Light grey color for unselected stars */
+    transition: color 0.2s ease; /* Smooth transition for hover and click */
+  }
+  
+  .review-form .star:hover,
+  .review-form .star:hover ~ .star {
+    color: #ffc107; /* Yellow hover effect */
+  }
+  
+  .review-form .star.active {
+    color: #ffc107; /* Yellow color for selected stars */
+  }
+  
+  
+  
+  .review-form h4 {
+    font-family: var(--font-heading-family);
+    color:#0f5c5c;
+  }
+
+  .review-form label {
+    font-family: var(--font-heading-family);
+    font-weight: 500;
+    color:#161616;
+    font-size: 1.05rem;
+  }
+  
+  .review-form .form-control {
+    border-radius: 5px;
+  }
+  
+  
+  .review-form button {
+    background-color: #f77b55;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 20px;
+    color: #fff;
+    font-size: 0.9rem;
+  }
+  
+  .review-form button:hover {
+    background-color: #d9534f;
+  }
+  
+
+  /* custum scroller */
+  .custom-scrollbar {
+    scrollbar-width: thin !important; /* For Firefox */
+    scrollbar-color: #c3e8e8 #ffffff !important; /* Thumb and track colors */
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px !important; /* Thinner scrollbar */
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #c3e8e8, #e4f7f7) !important; /* Lighter gradient thumb color */
+    border-radius: 10px !important; /* Rounded corners */
+    border: 2px solid #ffffff !important; /* Creates a gap between thumb and track for a neat look */
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #b0dddd, #d9f2f2) !important; /* Slightly darker gradient on hover */
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #ffffff !important; /* White track background */
+    border-radius: 10px !important; /* Rounded corners */
+  }
+  
+  

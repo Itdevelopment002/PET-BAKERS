@@ -263,8 +263,8 @@ const PawSnack = () => {
         <div className="col-md-3 col-12 filter-section">
           <h4>Filters</h4>
           <div className="filter-group">
-            <label>Flavor</label>
-            <select
+          <label>Flavour</label>
+          <select
               className="form-select"
               onChange={(e) => handleFilterChange("flavor", e.target.value)}
             >

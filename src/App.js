@@ -17,6 +17,9 @@ import RefundPolicy from './components/RefundPoilcy/RefundPolicy';
 import Tac from './components/Tac/Tac';
 import ShippingPolicy from './components/ShippingPolicy/ShippingPolicy';
 import MiniCakeDetails from './components/MiniCakeDetails/MiniCakeDetails';
+import CupCakeDetails from './components/CupCakeDetails/CupCakeDetails';
+import CakeDetails from './components/CakeDetails/CakeDetails';
+import PawSnackDetails from './components/PawSnackDetails/PawSnackDetails';
 import Cart from './components/Cart/Cart';
 
 function App() {
@@ -42,10 +45,13 @@ function App() {
           <Route path="/terms-of-service" element={<Tac />} />
           <Route path="/shipping-policy" element={<ShippingPolicy />} />
           <Route path="/cup-cakes" element={<CupCake />} />
+          <Route path="/cupcake/:id" element={<CupCakeDetails />} />
           <Route path="/mini-cakes" element={<MiniCake />} />
           <Route path="/minicake/:id" element={<MiniCakeDetails />} />
           <Route path="/cakes" element={<Cake />} />
+          <Route path="/cake/:id" element={<CakeDetails />} />
           <Route path="/paw-snacks" element={<PawSnack />} />
+          <Route path="/pawsnack/:id" element={<PawSnackDetails />} />
         </Routes>
       </main>
       {!shouldHideHeaderFooter && <Footer />}
