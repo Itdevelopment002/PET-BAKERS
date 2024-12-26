@@ -71,7 +71,7 @@
   border: none;
   transition: box-shadow 0.3s ease-in-out;
   background-color: rgba(252, 244, 231, 0.954);
-  border-radius: 8px;
+  border-radius: 0px !important;
   position: relative;
 }
 
@@ -281,6 +281,11 @@
   font-weight: 500;
   color:#ffffff;
   background-color: #0f7b7b;
+}
+.add-cart-button:hover {
+  font-family: var(--font-heading-family);
+  font-weight: 500;
+  border-color: #0f7b7b;
 }
 
 
